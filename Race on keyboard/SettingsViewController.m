@@ -12,10 +12,9 @@
 @interface SettingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *textLanguage;
-@property (weak, nonatomic) IBOutlet UIButton *carButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *botDifficult;
-
-
+@property (weak, nonatomic) IBOutlet UIImageView *carImage;
+@property (weak, nonatomic) IBOutlet UIButton *carSelectButton;
 
 @end
 
@@ -25,10 +24,10 @@
 
 -(void)setup{
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
-    [self setupButton];
     [self selectSegmentedControll];
     [self selectSegmentedControllOfBot];
-    
+    [self setupCarImage];
+    [self customizeButtonOfSelectCar];
 }
 
 - (void)viewDidLoad {
@@ -130,18 +129,38 @@
     
 }
 
-#pragma mark - customize car button
+#pragma mark - customize car select
 
--(void)setupButton{
-
-    [self.carButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
-    [self.carButton setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", [[NSUserDefaults standardUserDefaults] stringForKey:@"playerCar"]]] forState:UIControlStateNormal];
-
-    NSLog(@"work");
-
+-(void)setupCarImage{
+//    [self.carImage.image setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", [[NSUserDefaults standardUserDefaults] stringForKey:@"playerCar"]]] forState:UIControlStateNormal];
+    CarSelect *car = [CarSelect new];
+    
+    self.carImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [car loadFromUserDefaults]]];
+    
 }
 
-
+-(void)customizeButtonOfSelectCar{
+    CALayer *layer = self.carSelectButton.layer;
+    
+    //Сделаем отсутпы по краям от текста
+//    [self.carSelectButton setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
+    
+    [self.carSelectButton layoutIfNeeded];
+    
+    //Закруглим края
+    CGRect frame = self.carSelectButton.frame;
+    
+    //половина высоты кнопки -> получим овал;
+    CGFloat radious = CGRectGetHeight(frame) / 7;
+    layer.cornerRadius = radious;
+    
+    
+    //Обведем кнопку
+    layer.borderColor = [UIColor whiteColor].CGColor;
+    layer.borderWidth = 1;
+    
+    layer.backgroundColor = (__bridge CGColorRef)([UIColor clearColor]);
+}
 
 
 @end

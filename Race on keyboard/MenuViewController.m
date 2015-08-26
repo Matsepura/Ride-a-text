@@ -17,6 +17,20 @@
 
 @implementation MenuViewController
 
+#pragma mark - setup
+
+-(void)setup{
+    [self customizeStyleOfView];
+    [self customizeButton];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setup];
+}
+
+#pragma mark - customize
+
 -(void)customizeStyleOfView{
         self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1];
         self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
@@ -52,22 +66,6 @@
     layer.backgroundColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1].CGColor;
         button.tintColor = [UIColor whiteColor];
     }
-}
-
--(void)setup{
-    [self customizeStyleOfView];
-    [self customizeButton];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setup];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

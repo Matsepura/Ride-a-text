@@ -13,27 +13,27 @@
 
 @interface CarSelect ()
 
-//@property (weak) UIScrollView *scrollView; //что это
 @property (strong, nonatomic) id note;
 
 @end
 
 @implementation CarSelect
 
+#pragma mark - setup
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self listOfCarToSelect];
     [self setup];
-    
-    
 }
 
 -(void)setup{
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1];
-//    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
-//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
+
+#pragma mark - list of car
 
 //создаем два столбика со всеми машинами для выбора машины игрока
 -(void)listOfCarToSelect{
@@ -88,7 +88,6 @@
     
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:rvc];
     [self presentViewController:nvc animated:YES completion:nil];
-    
 }
 
 
@@ -103,6 +102,13 @@
 }
 
 -(NSString *)loadFromUserDefaults{
+    if ([[NSUserDefaults standardUserDefaults]
+         stringForKey:@"playerCar"] == nil) {
+        NSString *valueToSave = [NSString stringWithFormat:@"car1.png"];
+         [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"playerCar"];
+         [[NSUserDefaults standardUserDefaults] synchronize];
+        NSLog(@"car select is nil!");
+    }
     NSString *savedValue = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"playerCar"];
     

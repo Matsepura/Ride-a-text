@@ -39,7 +39,7 @@
     CALayer *layer = self.textView.layer;
     
     //Сделаем отсутпы по краям от текста
-    //    [self.textView setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
+    //   [self.textView setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
     
     [self.textView layoutIfNeeded];
     
@@ -117,6 +117,8 @@
     //    [self.bot setEasyBotByTimer:self.opponentSliderTwo];
     NSLog(@"wiilappear");
 }
+
+// !!! Если запустить через вью дид лоад, анимация слайдеров не работает=( почему?
 
 //- (void)viewDidLoad {
 //    [super viewDidLoad];

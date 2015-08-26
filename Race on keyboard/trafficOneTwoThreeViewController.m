@@ -71,9 +71,9 @@
     }
 }
 
-
-
 - (void)viewDidLoad {
+    [self.navigationController setNavigationBarHidden:YES];
+    [super viewDidLoad];
     [self countingOneTwoThree];
 
 }

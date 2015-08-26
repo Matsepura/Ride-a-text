@@ -131,7 +131,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5Ae-Ei-50y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ed2-lP-ifU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCb-1h-SeC">
@@ -148,6 +148,7 @@
                             <constraint firstAttribute="centerX" secondItem="tCb-1h-SeC" secondAttribute="centerX" id="Jit-7H-BQb"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="imageView" destination="tCb-1h-SeC" id="4W9-1N-qew"/>
@@ -172,6 +173,7 @@
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-N1-ikq">
                                 <rect key="frame" x="16" y="20" width="79" height="30"/>
                                 <state key="normal" title="Choose car">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -181,6 +183,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIn-SG-DVj">
                                 <rect key="frame" x="265" y="20" width="39" height="30"/>
                                 <state key="normal" title="Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -191,11 +194,8 @@
                                 <rect key="frame" x="14" y="40" width="292" height="31"/>
                                 <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="0.0" colorSpace="deviceRGB"/>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-cm-Xcc" userLabel="firstOpponent">
-                                <rect key="frame" x="14" y="78" width="292" height="31"/>
-                            </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5mF-af-FjE" userLabel="secondOpponent">
-                                <rect key="frame" x="14" y="116" width="292" height="31"/>
+                                <rect key="frame" x="14" y="140" width="292" height="31"/>
                             </slider>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMn-E2-r5l" userLabel="Enter Race Text View">
                                 <rect key="frame" x="24" y="388" width="26" height="30"/>
@@ -205,13 +205,18 @@
                                     <action selector="touchOnEnterRaceTextFieldEnded:" destination="BYZ-38-t0r" eventType="editingChanged" id="meF-V9-Xfi"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="textView" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
-                                <rect key="frame" x="16" y="185" width="288" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="textView" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
+                                <rect key="frame" x="16" y="219" width="288" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-cm-Xcc" userLabel="firstOpponent">
+                                <rect key="frame" x="14" y="90" width="292" height="31"/>
+                            </slider>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Xki-td-06P"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -272,7 +277,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Zat-3d-y5r" kind="show" id="qdc-kS-Occ"/>
+                                    <segue destination="QAB-yb-UZb" kind="show" id="WQe-x0-zaP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -316,54 +321,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Select language of race's text" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiC-nA-ucr">
-                                <rect key="frame" x="16" y="94" width="288" height="39"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE6-X5-aF8">
-                                <rect key="frame" x="133" y="303" width="54" height="30"/>
-                                <state key="normal" title="Change">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Zat-3d-y5r" kind="show" id="KIO-b2-7SW"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Select difficulty of bot" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj8-ix-asX">
-                                <rect key="frame" x="16" y="370" width="288" height="39"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAP-4S-IoL">
-                                <rect key="frame" x="115" y="243" width="90" height="90"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Zat-3d-y5r" kind="show" id="IRQ-oa-X62"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-JY-8Z3">
-                                <rect key="frame" x="72" y="430" width="176" height="29"/>
-                                <segments>
-                                    <segment title="Easy"/>
-                                    <segment title="Normal"/>
-                                    <segment title="Hard"/>
-                                </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="botDifficultSegmentedContorl:" destination="SfX-CW-CYA" eventType="valueChanged" id="V1K-RP-bDn"/>
-                                </connections>
-                            </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-AO-mlj">
-                                <rect key="frame" x="70" y="154" width="181" height="29"/>
+                                <rect key="frame" x="70" y="154" width="180" height="29"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <segments>
                                     <segment title="Russian"/>
@@ -375,19 +334,59 @@
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Current car" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEz-XT-Vdk">
-                                <rect key="frame" x="16" y="243" width="288" height="30"/>
+                                <rect key="frame" x="22" y="239" width="119" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select language of race's text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWo-lZ-x5N">
+                                <rect key="frame" x="16" y="95" width="288" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCI-aS-RsJ">
+                                <rect key="frame" x="36" y="239" width="90" height="90"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select difficulty of bot" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1UX-Pd-eRg">
+                                <rect key="frame" x="22" y="374" width="277" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE6-X5-aF8">
+                                <rect key="frame" x="180" y="269" width="90" height="29"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Zat-3d-y5r" kind="show" id="KIO-b2-7SW"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-JY-8Z3">
+                                <rect key="frame" x="70" y="431" width="180" height="29"/>
+                                <segments>
+                                    <segment title="Easy"/>
+                                    <segment title="Normal"/>
+                                    <segment title="Hard"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="botDifficultSegmentedContorl:" destination="SfX-CW-CYA" eventType="valueChanged" id="V1K-RP-bDn"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="botDifficult" destination="TeK-JY-8Z3" id="1Xu-dm-Ayw"/>
-                        <outlet property="carButton" destination="QAP-4S-IoL" id="wiV-Wv-KZV"/>
+                        <outlet property="carImage" destination="wCI-aS-RsJ" id="yWL-59-jpN"/>
+                        <outlet property="carSelectButton" destination="qE6-X5-aF8" id="57V-4e-7RC"/>
                         <outlet property="textLanguage" destination="H8g-AO-mlj" id="ClJ-NC-fiE"/>
                     </connections>
                 </viewController>
@@ -450,6 +449,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZxR-Xs-97m"/>
-        <segue reference="KIO-b2-7SW"/>
+        <segue reference="AVU-qE-TAG"/>
     </inferredMetricsTieBreakers>
 </document>
