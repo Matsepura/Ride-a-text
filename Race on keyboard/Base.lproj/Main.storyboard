@@ -406,15 +406,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="designed by Freepik.com" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nst-yK-v9o">
-                                <rect key="frame" x="16" y="455" width="288" height="93"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="designed by Freepik.com" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-6I-L0B">
+                                <rect key="frame" x="16" y="518" width="288" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zbM-kB-250" firstAttribute="top" secondItem="cqi-6I-L0B" secondAttribute="bottom" constant="20" id="6kJ-HT-GOT"/>
+                            <constraint firstItem="cqi-6I-L0B" firstAttribute="trailing" secondItem="juC-N4-iPL" secondAttribute="trailingMargin" id="FeB-NB-OAz"/>
+                            <constraint firstItem="cqi-6I-L0B" firstAttribute="leading" secondItem="juC-N4-iPL" secondAttribute="leadingMargin" id="vQ3-K4-fvn"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
@@ -444,6 +449,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZxR-Xs-97m"/>
-        <segue reference="KIO-b2-7SW"/>
+        <segue reference="qdc-kS-Occ"/>
     </inferredMetricsTieBreakers>
 </document>
