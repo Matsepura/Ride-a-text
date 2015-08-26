@@ -8,6 +8,7 @@
 
 #import "BotView.h"
 #import "YouWinViewController.h"
+#import "SettingsViewController.h"
 
 @interface BotView ()
 
@@ -17,9 +18,23 @@
 
 @implementation BotView
 
-// задаем время ботам
+//задаем время исходя из выбора сложности бота
+
 -(NSInteger)setRandomValue{
-    self.randomValue = 43 + arc4random_uniform(17);
+    SettingsViewController *textSet = [SettingsViewController new];
+    NSInteger time = 0;
+    
+    if ([[textSet loadBotSelect] isEqualToString:@"easy"]) {
+        time = 43;
+    }
+    if ([[textSet loadBotSelect] isEqualToString:@"normal"]) {
+        time = 33;
+    }
+    if ([[textSet loadBotSelect] isEqualToString:@"hard"]) {
+        time = 23;
+    }
+    NSLog(@"bot level and time %ld", time);
+    self.randomValue = time + arc4random_uniform(17);
     NSLog(@"RANDOM VALUE IS %ld", (long)self.randomValue);
     return self.randomValue;
 }
