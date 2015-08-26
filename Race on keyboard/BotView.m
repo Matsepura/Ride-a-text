@@ -25,7 +25,7 @@
     NSInteger time = 0;
     
     if ([[textSet loadBotSelect] isEqualToString:@"easy"]) {
-        time = 43;
+        time = 53;
     }
     if ([[textSet loadBotSelect] isEqualToString:@"normal"]) {
         time = 33;
@@ -33,7 +33,7 @@
     if ([[textSet loadBotSelect] isEqualToString:@"hard"]) {
         time = 23;
     }else{
-        time = 43;
+        time = 53;
     }
     
     NSLog(@"bot level and time %ld", (long)time);
@@ -48,6 +48,8 @@
     [UIView animateWithDuration:i animations:^{
         [slider setValue:slider.maximumValue - 0.0001 animated:YES];
         NSLog(@"slider animations work");
+        slider.minimumTrackTintColor = [UIColor clearColor];
+        slider.maximumTrackTintColor = [UIColor clearColor];
     }];
     [self performSelector:@selector(setEasyBotSliderMaxValue:)
                withObject:slider
