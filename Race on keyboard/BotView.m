@@ -33,7 +33,7 @@
     if ([[textSet loadBotSelect] isEqualToString:@"hard"]) {
         time = 23;
     }
-    NSLog(@"bot level and time %ld", time);
+    NSLog(@"bot level and time %ld", (long)time);
     self.randomValue = time + arc4random_uniform(17);
     NSLog(@"RANDOM VALUE IS %ld", (long)self.randomValue);
     return self.randomValue;
