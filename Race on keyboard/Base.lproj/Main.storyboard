@@ -170,7 +170,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-N1-ikq">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-N1-ikq">
                                 <rect key="frame" x="16" y="20" width="79" height="30"/>
                                 <state key="normal" title="Choose car">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,7 +180,7 @@
                                     <segue destination="Zat-3d-y5r" kind="show" id="AVU-qE-TAG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIn-SG-DVj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIn-SG-DVj">
                                 <rect key="frame" x="265" y="20" width="39" height="30"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,35 +190,66 @@
                                     <segue destination="jVB-8m-T5v" kind="show" id="Qqo-tW-PKZ"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="raG-Kj-P8D" userLabel="playerSlider">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="raG-Kj-P8D" userLabel="playerSlider">
                                 <rect key="frame" x="14" y="40" width="292" height="31"/>
                                 <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="0.0" colorSpace="deviceRGB"/>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5mF-af-FjE" userLabel="secondOpponent">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-cm-Xcc" userLabel="firstOpponent">
+                                <rect key="frame" x="14" y="90" width="292" height="31"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5mF-af-FjE" userLabel="secondOpponent">
                                 <rect key="frame" x="14" y="140" width="292" height="31"/>
                             </slider>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMn-E2-r5l" userLabel="Enter Race Text View">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" editable="NO" text="textView" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
+                                <rect key="frame" x="16" y="219" width="288" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="f1e-Wh-hMF"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMn-E2-r5l" userLabel="Enter Race Text View">
                                 <rect key="frame" x="24" y="388" width="26" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="P5k-6c-Hbg"/>
+                                    <constraint firstAttribute="height" constant="30" id="U4A-Ow-WQH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="touchOnEnterRaceTextFieldEnded:" destination="BYZ-38-t0r" eventType="editingChanged" id="meF-V9-Xfi"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="textView" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
-                                <rect key="frame" x="16" y="219" width="288" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-cm-Xcc" userLabel="firstOpponent">
-                                <rect key="frame" x="14" y="90" width="292" height="31"/>
-                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FIn-SG-DVj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="09s-N3-M6x"/>
+                            <constraint firstItem="yoY-EV-tbm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1h7-5d-P17"/>
+                            <constraint firstItem="yoY-EV-tbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5ax-zX-v5Z"/>
+                            <constraint firstItem="tMn-E2-r5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="6RW-Dg-tis"/>
+                            <constraint firstItem="tMn-E2-r5l" firstAttribute="top" secondItem="yoY-EV-tbm" secondAttribute="bottom" constant="69" id="D6V-2g-lar"/>
+                            <constraint firstItem="6B0-cm-Xcc" firstAttribute="top" secondItem="raG-Kj-P8D" secondAttribute="bottom" constant="20" id="EU5-ZY-Hyd"/>
+                            <constraint firstItem="BQe-N1-ikq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FK1-Cd-pKh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tMn-E2-r5l" secondAttribute="trailing" constant="254" id="Fko-kL-Vf0"/>
+                            <constraint firstItem="tMn-E2-r5l" firstAttribute="top" secondItem="yoY-EV-tbm" secondAttribute="bottom" constant="69" id="IA7-FC-0ql"/>
+                            <constraint firstItem="5mF-af-FjE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ksy-iF-jzk"/>
+                            <constraint firstItem="raG-Kj-P8D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OHf-ZY-N9s"/>
+                            <constraint firstItem="raG-Kj-P8D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="P5f-Aq-FyL"/>
+                            <constraint firstItem="6B0-cm-Xcc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RiV-1B-2Fb"/>
+                            <constraint firstItem="BQe-N1-ikq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZUd-71-gGm"/>
+                            <constraint firstItem="FIn-SG-DVj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cWa-M0-d5h"/>
+                            <constraint firstItem="raG-Kj-P8D" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="csg-TS-TCK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tMn-E2-r5l" secondAttribute="bottom" constant="150" id="ifG-tr-Bg6"/>
+                            <constraint firstItem="yoY-EV-tbm" firstAttribute="top" secondItem="5mF-af-FjE" secondAttribute="bottom" constant="49" id="jox-Hg-6Jt"/>
+                            <constraint firstItem="5mF-af-FjE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lcO-dU-idM"/>
+                            <constraint firstItem="5mF-af-FjE" firstAttribute="top" secondItem="6B0-cm-Xcc" secondAttribute="bottom" constant="20" id="oQb-mf-MIe"/>
+                            <constraint firstItem="yoY-EV-tbm" firstAttribute="top" secondItem="5mF-af-FjE" secondAttribute="bottom" constant="49" id="q7Z-uW-ZWP"/>
+                            <constraint firstItem="5mF-af-FjE" firstAttribute="top" secondItem="6B0-cm-Xcc" secondAttribute="bottom" constant="20" id="tVP-Si-jjK"/>
+                            <constraint firstItem="6B0-cm-Xcc" firstAttribute="top" secondItem="raG-Kj-P8D" secondAttribute="bottom" constant="20" id="ytT-fi-aHt"/>
+                            <constraint firstItem="6B0-cm-Xcc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zij-G7-ciu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xki-td-06P"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
