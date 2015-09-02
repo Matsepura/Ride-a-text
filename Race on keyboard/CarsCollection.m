@@ -27,22 +27,22 @@
 }
 
 //  проверка, чтобы машинки не попадались одинаковые
--(void)changeCarsColor:(UISlider *)slider{
+-(void)changeCarsColor:(UIImageView *)image{
     CarSelect* car = [CarSelect new];
     
     self.numberOfCar = arc4random_uniform([self quantityOfCar]) + 1;
     
     //проверка на совпадение с машинкой игрока
     if ([[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar] isEqualToString:[car loadFromUserDefaults]]) {
-        [self changeCarsColor:slider];
+        [self changeCarsColor:image];
     }else{
         // проверка на совпадение 2 и 3 машины
         if (self.numberOfCar == self.checkRepeatFirstAndSecondCar) {
             
-            [self changeCarsColor:slider];
+            [self changeCarsColor:image];
         }
         else{
-            [slider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar]] forState:UIControlStateNormal];
+            image.image = [UIImage imageNamed:[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar]];
             self.checkRepeatFirstAndSecondCar = self.numberOfCar;
             
         }

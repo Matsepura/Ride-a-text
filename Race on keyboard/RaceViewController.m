@@ -17,11 +17,16 @@
 
 @interface RaceViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *labelForTextRace;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITextField *enterRaceTextField;
 @property (weak, nonatomic) IBOutlet UISlider *opponentSliderOne;
 @property (weak, nonatomic) IBOutlet UISlider *opponentSliderTwo;
 @property (weak, nonatomic) IBOutlet UISlider *playerProgressRaceSlider;
+@property (weak, nonatomic) IBOutlet UIImageView *imagePlayerSider;
+@property (weak, nonatomic) IBOutlet UIImageView *imageFirstOpponent;
+@property (weak, nonatomic) IBOutlet UIImageView *imageSecondOpponent;
+@property (assign, nonatomic) NSInteger secc;
 
 @property (nonatomic) Race* raceProperty;
 @property (nonatomic) CarsCollection* makeCar;
@@ -34,14 +39,74 @@
 
 #pragma mark - setup
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self setup];
+    NSLog(@"wiilappear");
+}
+
+
+-(void)setup{
+    [self customizeTextView];
+    self.raceProperty = [[Race alloc] init];
+    self.makeCar = [[CarsCollection alloc] init];
+    self.bot = [[BotView alloc] init];
+    
+    [self.enterRaceTextField becomeFirstResponder];
+    //    [self setupAllSliders];
+    [self.raceProperty setUpTextInRace:self.labelForTextRace AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
+    [self.textView setTextAlignment:NSTextAlignmentCenter];
+    self.playerProgressRaceSlider.value = 0;
+    self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
+    [self setImageCarOfOpponents];
+}
+
+-(void)setImageCarOfOpponents{
+    
+    [self.bot setImageBot:self.imageFirstOpponent];
+    [self.makeCar changeCarsColor:self.imageFirstOpponent];
+    NSLog(@"first secc is %ld", (long)self.bot.timeToGameOverStart);
+    NSInteger firstTime = self.bot.timeToGameOverStart;
+    NSLog(@"firstTime %ld", (long)firstTime);
+    
+    [self.bot setImageBot:self.imageSecondOpponent];
+    [self.makeCar changeCarsColor:self.imageSecondOpponent];
+    NSLog(@"second secc is %ld", (long)self.bot.timeToGameOverStart);
+    NSInteger secondTime = self.bot.timeToGameOverStart;
+    NSLog(@"secondTime %ld", (long)secondTime);
+    
+    if (firstTime < secondTime) {
+        NSLog(@"first win");
+        [self performSelector:@selector(youLose)
+                   withObject:nil
+                   afterDelay:firstTime];
+    }else{
+        NSLog(@"second win");
+        [self performSelector:@selector(youLose)
+                   withObject:nil
+                   afterDelay:secondTime];
+    }
+    
+}
+
+- (void) drawTextInRect:(CGRect)rect
+{
+    UIEdgeInsets insets = {100, 500, 100, 500};
+    
+    [self.labelForTextRace drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
+}
+
 -(void)customizeTextView{
     //    [self.textView setTextAlignment:NSTextAlignmentCenter];
-    CALayer *layer = self.textView.layer;
-    
+    CALayer *layer = self.labelForTextRace.layer;
     //Сделаем отсутпы по краям от текста
-    //   [self.textView setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
+//       [self.textView setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
     
-    [self.textView layoutIfNeeded];
     
     //Закруглим края
     CGRect frame = self.textView.frame;
@@ -54,83 +119,70 @@
     //Обведем кнопку
     layer.borderColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1].CGColor;
     layer.borderWidth = 3;
+    [self drawTextInRect:self.labelForTextRace.frame];
 }
 
--(void)customizeViewOfSider:(UISlider *)slider{
-    
-    NSLog(@"setup");
-    slider.minimumTrackTintColor = [UIColor clearColor];
-    slider.maximumTrackTintColor = [UIColor clearColor];
-    slider.userInteractionEnabled = NO;
-    slider.value = 0;
-}
-
--(void)customizePlayerSlider{
-    CarSelect* car = [CarSelect new];
-    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromUserDefaults]]] forState:UIControlStateNormal];
-    NSLog(@"машинка игрока установлена");
-    [self customizeViewOfSider:self.playerProgressRaceSlider];
-}
-
--(void)customizeOpponentSliders{
-    
-    NSArray *sliders = [[NSArray alloc] initWithObjects: self.opponentSliderOne, self.opponentSliderTwo, nil];
-    
-    for (UISlider* n in sliders) {
-        [self customizeViewOfSider:n];
-        [self.makeCar changeCarsColor:n];
-        [self.bot setEasyBotByTimer:n];
-        
-        n.maximumValue = self.playerProgressRaceSlider.maximumValue;
-        NSLog(@"%f", self.playerProgressRaceSlider.maximumValue);
-        NSLog(@"%f", self.opponentSliderOne.maximumValue);
-        
-        
-        NSLog(@"бот настроен");
-    }
-}
-
--(void)setupAllSliders{
-    [self customizePlayerSlider];
-    [self customizeOpponentSliders];
-    
-}
-
--(void)setup{
-    [self customizeTextView];
-    self.raceProperty = [[Race alloc] init];
-    self.makeCar = [[CarsCollection alloc] init];
-    self.bot = [[BotView alloc] init];
-    
-    [self.enterRaceTextField becomeFirstResponder];
-    [self setupAllSliders];
-    [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
-    [self.textView setTextAlignment:NSTextAlignmentCenter];
-    self.playerProgressRaceSlider.value = 0;
-    self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self setup];
-    //    [self.bot setEasyBotByTimer:self.opponentSliderOne];
-    //    [self.bot setEasyBotByTimer:self.opponentSliderTwo];
-    NSLog(@"wiilappear");
-}
-
-// !!! Если запустить через вью дид лоад, анимация слайдеров не работает=( почему?
-
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    
-//    NSLog(@"didload");
+//-(void)customizeViewOfSider:(UISlider *)slider{
+//
+//    NSLog(@"setup");
+//    slider.minimumTrackTintColor = [UIColor clearColor];
+////    slider.maximumTrackTintColor = [UIColor clearColor];
+//    slider.userInteractionEnabled = NO;
+//    slider.value = 0;
 //}
+//
+//-(void)customizePlayerSlider{
+////    CarSelect* car = [CarSelect new];
+////    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromUserDefaults]]] forState:UIControlStateNormal];
+////    NSLog(@"машинка игрока установлена");
+////    [self customizeViewOfSider:self.playerProgressRaceSlider];
+//}
+//
+//-(void)customizeOpponentSliders{
+//
+//    NSArray *sliders = [[NSArray alloc] initWithObjects: self.opponentSliderOne, self.opponentSliderTwo, nil];
+//
+//    for (UISlider* n in sliders) {
+//        [self customizeViewOfSider:n];
+////        [self.makeCar changeCarsColor:n];
+////        [self.bot setEasyBotByTimer:n];
+//
+//        n.maximumValue = self.playerProgressRaceSlider.maximumValue;
+//        NSLog(@"%f", self.playerProgressRaceSlider.maximumValue);
+//        NSLog(@"%f", self.opponentSliderOne.maximumValue);
+//
+//
+//        NSLog(@"бот настроен");
+//    }
+//}
+//
+//-(void)setupAllSliders{
+//    [self customizePlayerSlider];
+//    [self customizeOpponentSliders];
+//
+//}
+
+//-(void)setImageBot:(UIImageView *)image{
+//    image.image = [UIImage imageNamed:@"car4.png"];
+//    [UIView animateWithDuration:10 animations:^{
+//        image.frame = CGRectMake(image.frame.origin.x + image.frame.origin.x,
+//                                 image.frame.origin.y,
+//                                 image.frame.size.width,
+//                                 image.frame.size.height);
+//    }];
+//    [self performSelector:@selector(youLose)
+//               withObject:nil
+//               afterDelay:10];
+//
+//
+//}
+
 
 #pragma mark - check and play
 
 - (IBAction)touchOnEnterRaceTextFieldEnded:(id)sender {
     
-    [self.raceProperty edittingLetter:self.playerProgressRaceSlider and:self.textView :self.enterRaceTextField];
+    [self.raceProperty edittingLetter:self.playerProgressRaceSlider and:self.labelForTextRace :self.enterRaceTextField];
     [self.textView setTextAlignment:NSTextAlignmentCenter];
     if (self.playerProgressRaceSlider.value == self.playerProgressRaceSlider.maximumValue) {
         [self performSelector:@selector(youWin)

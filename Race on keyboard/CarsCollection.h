@@ -10,7 +10,7 @@
 
 @interface CarsCollection : UIView
 
--(void)changeCarsColor:(UISlider *)slider;
+-(void)changeCarsColor:(UIImageView *)image;
 -(int)quantityOfCar;
 
 @end

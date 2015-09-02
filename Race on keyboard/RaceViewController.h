@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Semen Matsepura. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface RaceViewController : ViewController
+@interface RaceViewController : UIViewController
 
 @property (strong, nonatomic) NSString* car;
 -(void)youWin;

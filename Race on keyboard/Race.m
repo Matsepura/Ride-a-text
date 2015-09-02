@@ -22,7 +22,7 @@
 
 #pragma mark - setup tex in race
 
--(void)setUpTextInRace:(UITextView *)textView AndMakeMaxValueOfSlider:(UISlider *)slider{
+-(void)setUpTextInRace:(UILabel *)textView AndMakeMaxValueOfSlider:(UISlider *)slider{
     UIFont *font = [UIFont fontWithName:@"Palatino-Roman" size:19.0];
     NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font
                                                                 forKey:NSFontAttributeName];
@@ -48,7 +48,7 @@
     }];
 }
 
--(void)edittingLetter:(UISlider *)slider and:(UITextView *)textView :(UITextField *)textField{
+-(void)edittingLetter:(UISlider *)slider and:(UILabel *)textView :(UITextField *)textField{
     
     NSLog(@"touch ended on keyboard %ld", (long)self.countOfTouchOnKeyboard);
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
@@ -63,7 +63,7 @@
         textView.attributedText = self.now;
         textField.text = @"";
         self.countOfTouchOnKeyboard++;
-        [self makeProgressBySlider:slider and:textView];
+//        [self makeProgressBySlider:slider and:textView];
     } else {
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor redColor] range:self.range];
         textView.attributedText = self.now;

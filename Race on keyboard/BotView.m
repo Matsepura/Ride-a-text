@@ -7,12 +7,13 @@
 //
 
 #import "BotView.h"
-#import "YouWinViewController.h"
 #import "SettingsViewController.h"
+#import "YouLoseViewController.h"
 
 @interface BotView ()
 
 @property (assign, nonatomic) NSInteger randomValue;
+
 
 @end
 
@@ -60,6 +61,21 @@
     
     maxSlider.value = maxSlider.maximumValue;
     NSLog(@"max value work and max value is %f", maxSlider.maximumValue);
+}
+
+#warning реализовать через timeToLose время когда появляется окно геймовера
+-(void)setImageBot:(UIImageView *)image{
+    NSInteger i = [self setRandomValue];
+    self.timeToGameOverStart = i;
+//    image.image = [UIImage imageNamed:@"car4.png"];
+    [UIView animateWithDuration:i animations:^{
+        image.frame = CGRectMake(image.frame.origin.x + image.frame.origin.x,
+                                 image.frame.origin.y,
+                                 image.frame.size.width,
+                                 image.frame.size.height);
+    }];
+    NSLog(@"sec is %ld", (long)self.timeToGameOverStart);
+    
 }
 
 @end
