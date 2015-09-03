@@ -191,19 +191,6 @@
                                 <rect key="frame" x="14" y="60" width="572" height="31"/>
                                 <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="0.0" colorSpace="deviceRGB"/>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-cm-Xcc" userLabel="firstOpponent">
-                                <rect key="frame" x="14" y="160" width="572" height="31"/>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="rdz-Qs-2TQ" userLabel="secondOpponent">
-                                <rect key="frame" x="14" y="260" width="572" height="31"/>
-                            </slider>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" editable="NO" text="textView" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
-                                <rect key="frame" x="16" y="371" width="568" height="33"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textView>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMn-E2-r5l" userLabel="Enter Race Text View">
                                 <rect key="frame" x="16" y="550" width="41" height="30"/>
                                 <constraints>
@@ -216,17 +203,14 @@
                                     <action selector="touchOnEnterRaceTextFieldEnded:" destination="BYZ-38-t0r" eventType="editingChanged" id="meF-V9-Xfi"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LsC-5u-4ub">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LsC-5u-4ub" userLabel="firstOpponentCar">
                                 <rect key="frame" x="494" y="130" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="9al-Qe-IqX"/>
                                     <constraint firstAttribute="height" constant="90" id="hI3-Gh-dCX"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b0m-hZ-GJD">
-                                <rect key="frame" x="47" y="-76" width="61" height="28"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3xU-ps-Bmo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3xU-ps-Bmo" userLabel="secondOpponentCar">
                                 <rect key="frame" x="494" y="230" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="Smk-xw-Kuo"/>
@@ -242,33 +226,33 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b0m-hZ-GJD" userLabel="playerCar">
+                                <rect key="frame" x="16" y="30" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="9xC-3S-GcG"/>
+                                    <constraint firstAttribute="height" constant="90" id="dhC-OP-jtl"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="LsC-5u-4ub" secondAttribute="centerY" constant="125" id="0ME-ap-DEN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tMn-E2-r5l" secondAttribute="bottom" constant="20" id="0oq-zu-b2P"/>
                             <constraint firstItem="raG-Kj-P8D" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8N5-hF-5vo"/>
-                            <constraint firstItem="rdz-Qs-2TQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BQ6-a3-NTf"/>
+                            <constraint firstItem="b0m-hZ-GJD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="CgA-Na-W2T"/>
                             <constraint firstItem="BQe-N1-ikq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="DMN-eG-mGG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yoY-EV-tbm" secondAttribute="bottom" constant="196" id="GUe-ho-tVs"/>
-                            <constraint firstItem="6B0-cm-Xcc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="HQB-zb-fAd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n8j-mO-Tfx" secondAttribute="bottom" constant="222" id="J6g-dP-oUf"/>
                             <constraint firstItem="3xU-ps-Bmo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Llt-5r-jR5"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rdz-Qs-2TQ" secondAttribute="bottom" constant="310" id="MsD-om-KX0"/>
+                            <constraint firstItem="b0m-hZ-GJD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Lw4-0D-Q5W"/>
                             <constraint firstItem="BQe-N1-ikq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ow2-La-GxS"/>
                             <constraint firstItem="FIn-SG-DVj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QQu-t0-o7m"/>
                             <constraint firstItem="FIn-SG-DVj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="S9S-YA-akt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3xU-ps-Bmo" secondAttribute="bottom" constant="280" id="elw-FM-zt9"/>
                             <constraint firstItem="LsC-5u-4ub" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fI9-2S-SFm"/>
-                            <constraint firstItem="rdz-Qs-2TQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="g70-0v-ZIa"/>
-                            <constraint firstItem="yoY-EV-tbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kZd-A7-Nnz"/>
                             <constraint firstItem="raG-Kj-P8D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="oLK-rm-anr"/>
-                            <constraint firstItem="yoY-EV-tbm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pP2-Kz-SMa"/>
                             <constraint firstItem="raG-Kj-P8D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="q3s-Up-u2K"/>
-                            <constraint firstAttribute="centerY" secondItem="6B0-cm-Xcc" secondAttribute="centerY" constant="125" id="s7V-xM-zT4"/>
                             <constraint firstItem="n8j-mO-Tfx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="u3j-Gs-mUx"/>
                             <constraint firstItem="tMn-E2-r5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vdk-cD-5B0"/>
-                            <constraint firstItem="6B0-cm-Xcc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xWy-hf-Qgl"/>
                             <constraint firstItem="n8j-mO-Tfx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yfm-9p-jxW"/>
                         </constraints>
                     </view>
@@ -280,10 +264,8 @@
                         <outlet property="imagePlayerSider" destination="b0m-hZ-GJD" id="YPL-6A-k8h"/>
                         <outlet property="imageSecondOpponent" destination="3xU-ps-Bmo" id="cdx-TJ-zbU"/>
                         <outlet property="labelForTextRace" destination="n8j-mO-Tfx" id="Rsv-Ff-0pl"/>
-                        <outlet property="opponentSliderOne" destination="6B0-cm-Xcc" id="akr-8j-Rdj"/>
-                        <outlet property="opponentSliderTwo" destination="rdz-Qs-2TQ" id="VIM-gg-MCh"/>
                         <outlet property="playerProgressRaceSlider" destination="raG-Kj-P8D" id="rBJ-pt-aoO"/>
-                        <outlet property="textView" destination="yoY-EV-tbm" id="JcK-OT-BJT"/>
+                        <outlet property="xPositionOfPlayer" destination="Lw4-0D-Q5W" id="2p7-QV-oa4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

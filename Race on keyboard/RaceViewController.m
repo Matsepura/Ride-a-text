@@ -18,15 +18,13 @@
 @interface RaceViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *labelForTextRace;
-@property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITextField *enterRaceTextField;
-@property (weak, nonatomic) IBOutlet UISlider *opponentSliderOne;
-@property (weak, nonatomic) IBOutlet UISlider *opponentSliderTwo;
 @property (weak, nonatomic) IBOutlet UISlider *playerProgressRaceSlider;
 @property (weak, nonatomic) IBOutlet UIImageView *imagePlayerSider;
 @property (weak, nonatomic) IBOutlet UIImageView *imageFirstOpponent;
 @property (weak, nonatomic) IBOutlet UIImageView *imageSecondOpponent;
 @property (assign, nonatomic) NSInteger secc;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *xPositionOfPlayer;
 
 @property (nonatomic) Race* raceProperty;
 @property (nonatomic) CarsCollection* makeCar;
@@ -41,6 +39,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+//    [self moveToStart:self.imagePlayerSider];
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
 }
 
@@ -60,10 +59,11 @@
     [self.enterRaceTextField becomeFirstResponder];
     //    [self setupAllSliders];
     [self.raceProperty setUpTextInRace:self.labelForTextRace AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
-    [self.textView setTextAlignment:NSTextAlignmentCenter];
+//    [self.textView setTextAlignment:NSTextAlignmentCenter];
     self.playerProgressRaceSlider.value = 0;
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
     [self setImageCarOfOpponents];
+    [self customizePlayerSlider];
 }
 
 -(void)setImageCarOfOpponents{
@@ -94,33 +94,38 @@
     
 }
 
-- (void) drawTextInRect:(CGRect)rect
-{
-    UIEdgeInsets insets = {100, 500, 100, 500};
-    
-    [self.labelForTextRace drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
-}
-
 -(void)customizeTextView{
-    //    [self.textView setTextAlignment:NSTextAlignmentCenter];
     CALayer *layer = self.labelForTextRace.layer;
-    //Сделаем отсутпы по краям от текста
-//       [self.textView setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
-    
     
     //Закруглим края
-    CGRect frame = self.textView.frame;
+    CGRect frame = self.labelForTextRace.frame;
     
     //половина высоты кнопки -> получим овал;
-    CGFloat radious = CGRectGetHeight(frame) / 7;
+    CGFloat radious = CGRectGetHeight(frame) / 10;
     layer.cornerRadius = radious;
-    
-    
     //Обведем кнопку
     layer.borderColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1].CGColor;
     layer.borderWidth = 3;
-    [self drawTextInRect:self.labelForTextRace.frame];
 }
+
+-(void)customizePlayerSlider{
+    CarSelect* car = [CarSelect new];
+    self.imagePlayerSider.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromUserDefaults]]];
+
+    NSLog(@"машинка игрока установлена");
+}
+
+//-(void)moveToStart:(UIImageView *)image{
+//        [image updateConstraintsIfNeeded];
+//    CGFloat i = self.imagePlayerSider.frame.origin.y;
+//    self.xPositionOfPlayer.constant = i + 40;
+    
+//    CGRectMake(image.frame.origin.x + image.frame.origin.x,
+//                             image.frame.origin.y,
+//                             image.frame.size.width,
+//                             image.frame.size.height);
+//    
+//}
 
 //-(void)customizeViewOfSider:(UISlider *)slider{
 //
@@ -182,17 +187,22 @@
 
 - (IBAction)touchOnEnterRaceTextFieldEnded:(id)sender {
     
-    [self.raceProperty edittingLetter:self.playerProgressRaceSlider and:self.labelForTextRace :self.enterRaceTextField];
-    [self.textView setTextAlignment:NSTextAlignmentCenter];
-    if (self.playerProgressRaceSlider.value == self.playerProgressRaceSlider.maximumValue) {
-        [self performSelector:@selector(youWin)
-                   withObject:nil
-                   afterDelay:0.5];
+    if ([self.raceProperty edittingLetter:self.labelForTextRace :self.enterRaceTextField] == YES) {
+        NSLog(@"%f", self.view.center.x * 4);
+        CGFloat oneShift = (self.view.center.x * 4) / [self.raceProperty textLenght];
+        NSLog(@"%f", oneShift);
+        self.xPositionOfPlayer.constant += oneShift;
+        [UIView animateWithDuration:1.0 animations:^{
+            
+            [self.view layoutIfNeeded];
+            
+        }];
+        NSLog(@"yes!!!!!!");
     }
-    if (self.opponentSliderOne.value == self.opponentSliderOne.maximumValue || self.opponentSliderTwo.value == self.opponentSliderTwo.maximumValue) {
-        [self youLose];
-    }
-    
+
+
+//    [self.raceProperty edittingLetter:self.labelForTextRace :self.enterRaceTextField];
+
 }
 
 #pragma  mark - you win / you lose
