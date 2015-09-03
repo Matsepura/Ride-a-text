@@ -19,17 +19,17 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelForTextRace;
 @property (weak, nonatomic) IBOutlet UITextField *enterRaceTextField;
-@property (weak, nonatomic) IBOutlet UISlider *playerProgressRaceSlider;
 @property (weak, nonatomic) IBOutlet UIImageView *imagePlayerSider;
 @property (weak, nonatomic) IBOutlet UIImageView *imageFirstOpponent;
 @property (weak, nonatomic) IBOutlet UIImageView *imageSecondOpponent;
-@property (assign, nonatomic) NSInteger secc;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *xPositionOfPlayer;
 
 @property (nonatomic) Race* raceProperty;
 @property (nonatomic) CarsCollection* makeCar;
 @property (nonatomic) BotView* bot;
 @property (nonatomic) trafficOneTwoThreeViewController* goRace;
+
+@property (assign, nonatomic) NSInteger countOfWords;
 
 @end
 
@@ -39,7 +39,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    [self moveToStart:self.imagePlayerSider];
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
 }
 
@@ -49,7 +48,6 @@
     NSLog(@"wiilappear");
 }
 
-
 -(void)setup{
     [self customizeTextView];
     self.raceProperty = [[Race alloc] init];
@@ -57,10 +55,7 @@
     self.bot = [[BotView alloc] init];
     
     [self.enterRaceTextField becomeFirstResponder];
-    //    [self setupAllSliders];
-    [self.raceProperty setUpTextInRace:self.labelForTextRace AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
-//    [self.textView setTextAlignment:NSTextAlignmentCenter];
-    self.playerProgressRaceSlider.value = 0;
+    [self.raceProperty setUpTextInRace:self.labelForTextRace];
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
     [self setImageCarOfOpponents];
     [self customizePlayerSlider];
@@ -115,94 +110,26 @@
     NSLog(@"машинка игрока установлена");
 }
 
-//-(void)moveToStart:(UIImageView *)image{
-//        [image updateConstraintsIfNeeded];
-//    CGFloat i = self.imagePlayerSider.frame.origin.y;
-//    self.xPositionOfPlayer.constant = i + 40;
-    
-//    CGRectMake(image.frame.origin.x + image.frame.origin.x,
-//                             image.frame.origin.y,
-//                             image.frame.size.width,
-//                             image.frame.size.height);
-//    
-//}
-
-//-(void)customizeViewOfSider:(UISlider *)slider{
-//
-//    NSLog(@"setup");
-//    slider.minimumTrackTintColor = [UIColor clearColor];
-////    slider.maximumTrackTintColor = [UIColor clearColor];
-//    slider.userInteractionEnabled = NO;
-//    slider.value = 0;
-//}
-//
-//-(void)customizePlayerSlider{
-////    CarSelect* car = [CarSelect new];
-////    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromUserDefaults]]] forState:UIControlStateNormal];
-////    NSLog(@"машинка игрока установлена");
-////    [self customizeViewOfSider:self.playerProgressRaceSlider];
-//}
-//
-//-(void)customizeOpponentSliders{
-//
-//    NSArray *sliders = [[NSArray alloc] initWithObjects: self.opponentSliderOne, self.opponentSliderTwo, nil];
-//
-//    for (UISlider* n in sliders) {
-//        [self customizeViewOfSider:n];
-////        [self.makeCar changeCarsColor:n];
-////        [self.bot setEasyBotByTimer:n];
-//
-//        n.maximumValue = self.playerProgressRaceSlider.maximumValue;
-//        NSLog(@"%f", self.playerProgressRaceSlider.maximumValue);
-//        NSLog(@"%f", self.opponentSliderOne.maximumValue);
-//
-//
-//        NSLog(@"бот настроен");
-//    }
-//}
-//
-//-(void)setupAllSliders{
-//    [self customizePlayerSlider];
-//    [self customizeOpponentSliders];
-//
-//}
-
-//-(void)setImageBot:(UIImageView *)image{
-//    image.image = [UIImage imageNamed:@"car4.png"];
-//    [UIView animateWithDuration:10 animations:^{
-//        image.frame = CGRectMake(image.frame.origin.x + image.frame.origin.x,
-//                                 image.frame.origin.y,
-//                                 image.frame.size.width,
-//                                 image.frame.size.height);
-//    }];
-//    [self performSelector:@selector(youLose)
-//               withObject:nil
-//               afterDelay:10];
-//
-//
-//}
-
-
 #pragma mark - check and play
 
 - (IBAction)touchOnEnterRaceTextFieldEnded:(id)sender {
     
     if ([self.raceProperty edittingLetter:self.labelForTextRace :self.enterRaceTextField] == YES) {
-        NSLog(@"%f", self.view.center.x * 4);
-        CGFloat oneShift = (self.view.center.x * 4) / [self.raceProperty textLenght];
+        NSLog(@"width %f", self.view.bounds.size.width * 2);
+        CGFloat oneShift = (self.view.frame.size.width - 122) / [self.raceProperty textLenght];
         NSLog(@"%f", oneShift);
         self.xPositionOfPlayer.constant += oneShift;
         [UIView animateWithDuration:1.0 animations:^{
             
-            [self.view layoutIfNeeded];
-            
+        [self.view layoutIfNeeded];
         }];
         NSLog(@"yes!!!!!!");
+        //self.xPositionOfPlayer.constant = 0;
+        self.countOfWords ++;
     }
-
-
-//    [self.raceProperty edittingLetter:self.labelForTextRace :self.enterRaceTextField];
-
+    if (self.countOfWords == [self.raceProperty textLenght]) {
+        [self youWin];
+    }
 }
 
 #pragma  mark - you win / you lose

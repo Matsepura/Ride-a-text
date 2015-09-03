@@ -11,8 +11,8 @@
 @interface Race : UIView
 
 //-(void)makeProgressBySlider:(UIImageView *)slider and:(UITextView *)textView;
--(BOOL)edittingLetter:(UILabel *)textView :(UITextField *)textField;
--(void)setUpTextInRace:(UILabel *)label AndMakeMaxValueOfSlider:(UISlider *)slider;
+-(BOOL)edittingLetter:(UILabel *)label :(UITextField *)textField;
+-(void)setUpTextInRace:(UILabel *)label;
 -(CGFloat)textLenght;
 
 @end

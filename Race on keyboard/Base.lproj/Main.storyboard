@@ -187,10 +187,6 @@
                                     <segue destination="jVB-8m-T5v" kind="show" id="Qqo-tW-PKZ"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="raG-Kj-P8D" userLabel="playerSlider">
-                                <rect key="frame" x="14" y="60" width="572" height="31"/>
-                                <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="0.0" colorSpace="deviceRGB"/>
-                            </slider>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMn-E2-r5l" userLabel="Enter Race Text View">
                                 <rect key="frame" x="16" y="550" width="41" height="30"/>
                                 <constraints>
@@ -217,15 +213,6 @@
                                     <constraint firstAttribute="width" constant="90" id="d7h-5D-l1c"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8j-mO-Tfx">
-                                <rect key="frame" x="16" y="308" width="568" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Vna-Xq-GwF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b0m-hZ-GJD" userLabel="playerCar">
                                 <rect key="frame" x="16" y="30" width="90" height="90"/>
                                 <constraints>
@@ -233,27 +220,43 @@
                                     <constraint firstAttribute="height" constant="90" id="dhC-OP-jtl"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKT-pU-ttv">
+                                <rect key="frame" x="16" y="308" width="568" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8j-mO-Tfx">
+                                        <rect key="frame" x="4" y="2" width="560" height="65"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="n8j-mO-Tfx" firstAttribute="top" secondItem="PKT-pU-ttv" secondAttribute="top" constant="2" id="44H-tK-9ZP"/>
+                                    <constraint firstAttribute="trailing" secondItem="n8j-mO-Tfx" secondAttribute="trailing" constant="4" id="Gqn-Gk-sdo"/>
+                                    <constraint firstAttribute="bottom" secondItem="n8j-mO-Tfx" secondAttribute="bottom" constant="3" id="Umw-wP-TES"/>
+                                    <constraint firstAttribute="height" constant="70" id="hS4-ow-Pz9"/>
+                                    <constraint firstItem="n8j-mO-Tfx" firstAttribute="leading" secondItem="PKT-pU-ttv" secondAttribute="leading" constant="4" id="xsa-iN-lms"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="LsC-5u-4ub" secondAttribute="centerY" constant="125" id="0ME-ap-DEN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tMn-E2-r5l" secondAttribute="bottom" constant="20" id="0oq-zu-b2P"/>
-                            <constraint firstItem="raG-Kj-P8D" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8N5-hF-5vo"/>
+                            <constraint firstItem="PKT-pU-ttv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="710-PX-c7h"/>
                             <constraint firstItem="b0m-hZ-GJD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="CgA-Na-W2T"/>
                             <constraint firstItem="BQe-N1-ikq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="DMN-eG-mGG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n8j-mO-Tfx" secondAttribute="bottom" constant="222" id="J6g-dP-oUf"/>
                             <constraint firstItem="3xU-ps-Bmo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Llt-5r-jR5"/>
                             <constraint firstItem="b0m-hZ-GJD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Lw4-0D-Q5W"/>
                             <constraint firstItem="BQe-N1-ikq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ow2-La-GxS"/>
                             <constraint firstItem="FIn-SG-DVj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QQu-t0-o7m"/>
                             <constraint firstItem="FIn-SG-DVj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="S9S-YA-akt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PKT-pU-ttv" secondAttribute="bottom" constant="222" id="VWr-fS-40j"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3xU-ps-Bmo" secondAttribute="bottom" constant="280" id="elw-FM-zt9"/>
                             <constraint firstItem="LsC-5u-4ub" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fI9-2S-SFm"/>
-                            <constraint firstItem="raG-Kj-P8D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="oLK-rm-anr"/>
-                            <constraint firstItem="raG-Kj-P8D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="q3s-Up-u2K"/>
-                            <constraint firstItem="n8j-mO-Tfx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="u3j-Gs-mUx"/>
+                            <constraint firstItem="PKT-pU-ttv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jln-0z-2xl"/>
                             <constraint firstItem="tMn-E2-r5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vdk-cD-5B0"/>
-                            <constraint firstItem="n8j-mO-Tfx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yfm-9p-jxW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xki-td-06P"/>
@@ -264,7 +267,6 @@
                         <outlet property="imagePlayerSider" destination="b0m-hZ-GJD" id="YPL-6A-k8h"/>
                         <outlet property="imageSecondOpponent" destination="3xU-ps-Bmo" id="cdx-TJ-zbU"/>
                         <outlet property="labelForTextRace" destination="n8j-mO-Tfx" id="Rsv-Ff-0pl"/>
-                        <outlet property="playerProgressRaceSlider" destination="raG-Kj-P8D" id="rBJ-pt-aoO"/>
                         <outlet property="xPositionOfPlayer" destination="Lw4-0D-Q5W" id="2p7-QV-oa4"/>
                     </connections>
                 </viewController>
