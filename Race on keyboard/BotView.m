@@ -63,13 +63,11 @@
     NSLog(@"max value work and max value is %f", maxSlider.maximumValue);
 }
 
-#warning реализовать через timeToLose время когда появляется окно геймовера
 -(void)setImageBot:(UIImageView *)image{
     NSInteger i = [self setRandomValue];
     self.timeToGameOverStart = i;
-//    image.image = [UIImage imageNamed:@"car4.png"];
     [UIView animateWithDuration:i animations:^{
-        image.frame = CGRectMake(image.frame.origin.x + image.frame.origin.x,
+        image.frame = CGRectMake(image.frame.origin.x + image.frame.origin.x - 16,
                                  image.frame.origin.y,
                                  image.frame.size.width,
                                  image.frame.size.height);

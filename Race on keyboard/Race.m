@@ -28,13 +28,13 @@
 }
 
 -(void)setUpTextInRace:(UILabel *)label{
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:19.0];
-    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font
-                                                                forKey:NSFontAttributeName];
+//    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:19.0];
+//    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font
+//                                                                forKey:NSFontAttributeName];
     Text *makeText = [[Text alloc] init];
     NSString *text = [makeText text];
     self.lenghtOfText = (CGFloat)text.length;
-    self.now = [[NSMutableAttributedString alloc]initWithString:text attributes:attrsDictionary ];
+    self.now = [[NSMutableAttributedString alloc]initWithString:text];
 //    textView.font = [UIFont systemFontOfSize:20];
     label.attributedText = self.now ;
     
@@ -57,7 +57,7 @@
         NSLog(@"work");
         return YES;
     } else {
-        [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor redColor] range:self.range];
+        [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor colorWithRed:204/255.0 green:51/255.0 blue:51/255.0 alpha:1] range:self.range];
         label.attributedText = self.now;
         textField.text = @"";
         //вибрация при неправильном вводе буквы

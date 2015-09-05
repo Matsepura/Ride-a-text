@@ -83,7 +83,7 @@
 -(void)goToRaceViewController{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    trafficOneTwoThreeViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"trafficOneTwoThreeViewController"];
+    trafficOneTwoThreeViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
     
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:rvc];

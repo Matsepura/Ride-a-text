@@ -11,6 +11,7 @@
 @interface YouWinViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @end
 
@@ -24,7 +25,8 @@
 
 -(void)setup{
     [self.restartButton setTintColor:[UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1]];
-        [self youWinGame];
+    [self.menuButton setTintColor:[UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1]];
+    [self youWinGame];
 }
 
 - (void)viewDidLoad {

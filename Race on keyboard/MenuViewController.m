@@ -61,7 +61,7 @@
     
     //Обведем кнопку
     layer.borderColor = [UIColor whiteColor].CGColor;
-    layer.borderWidth = 3;
+    layer.borderWidth = 2;
     
     layer.backgroundColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1].CGColor;
         button.tintColor = [UIColor whiteColor];
