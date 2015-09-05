@@ -10,6 +10,7 @@
 #import "CarsCollection.h"
 #import "RaceViewController.h"
 #import "trafficOneTwoThreeViewController.h"
+#import "SettingsViewController.h"
 
 @interface CarSelect ()
 
@@ -79,17 +80,12 @@
 }
 
 #pragma mark - go to another view
-//выбираем машинку по нажатию и переходим на окно с гонкой
+//выбираем машинку по нажатию и переходим на окно назад
 -(void)goToRaceViewController{
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    trafficOneTwoThreeViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
-    [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
-    
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:rvc];
-    [self presentViewController:nvc animated:YES completion:nil];
+    NSUInteger ownIndex = [self.navigationController.viewControllers indexOfObject:self];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:ownIndex - 1] animated:YES];
 }
-
 
 #pragma mark - save player car into NSUserDefaults
 
@@ -97,7 +93,8 @@
     NSString *valueToSave = [NSString stringWithFormat:@"%@", button.currentTitle];
     [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"playerCar"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
+
+
     [self goToRaceViewController];
 }
 
@@ -105,8 +102,8 @@
     if ([[NSUserDefaults standardUserDefaults]
          stringForKey:@"playerCar"] == nil) {
         NSString *valueToSave = [NSString stringWithFormat:@"car1.png"];
-         [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"playerCar"];
-         [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"playerCar"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         NSLog(@"car select is nil!");
     }
     NSString *savedValue = [[NSUserDefaults standardUserDefaults]

@@ -26,13 +26,17 @@
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
     [self selectSegmentedControll];
     [self selectSegmentedControllOfBot];
-    [self setupCarImage];
     [self customizeButtonOfSelectCar];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setup];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self setupCarImage];
 }
 
 #pragma mark - customize segmented control of language

@@ -39,13 +39,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myW-cl-yjg">
-                                <rect key="frame" x="275" y="505" width="50" height="30"/>
-                                <state key="normal" title="Restart">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2y8-hz-iTG">
+                                <rect key="frame" x="56" y="455" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ewp-x5-XyY"/>
+                                    <constraint firstAttribute="width" constant="100" id="f9R-Dj-lek"/>
+                                </constraints>
+                                <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="F62-BO-TrK"/>
+                                    <segue destination="jVB-8m-T5v" kind="show" id="fHZ-dp-AMh"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jzq-PU-tYc">
@@ -55,23 +59,28 @@
                                     <constraint firstAttribute="width" constant="150" id="tS3-bz-R0q"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2y8-hz-iTG">
-                                <rect key="frame" x="275" y="445" width="50" height="40"/>
-                                <state key="normal" title="Menu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myW-cl-yjg">
+                                <rect key="frame" x="444" y="455" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="eqB-gm-TUu"/>
+                                    <constraint firstAttribute="height" constant="50" id="xrv-CA-2rQ"/>
+                                </constraints>
+                                <state key="normal" title="Restart">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="QAB-yb-UZb" kind="show" id="KWc-9f-tJM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2y8-hz-iTG" firstAttribute="trailing" secondItem="myW-cl-yjg" secondAttribute="trailing" id="0uJ-TM-n39"/>
-                            <constraint firstItem="myW-cl-yjg" firstAttribute="top" secondItem="2y8-hz-iTG" secondAttribute="bottom" constant="20" id="0yI-2I-bMU"/>
-                            <constraint firstItem="2y8-hz-iTG" firstAttribute="leading" secondItem="myW-cl-yjg" secondAttribute="leading" id="3Gb-0O-jnd"/>
+                            <constraint firstItem="2y8-hz-iTG" firstAttribute="top" secondItem="Jzq-PU-tYc" secondAttribute="bottom" constant="30" id="2Ag-Ao-tmq"/>
                             <constraint firstAttribute="centerX" secondItem="Jzq-PU-tYc" secondAttribute="centerX" id="3Z1-5l-oie"/>
-                            <constraint firstAttribute="centerX" secondItem="myW-cl-yjg" secondAttribute="centerX" id="Hpb-VV-8JI"/>
-                            <constraint firstItem="2y8-hz-iTG" firstAttribute="top" secondItem="Jzq-PU-tYc" secondAttribute="bottom" constant="20" id="Jcx-z7-cTa"/>
-                            <constraint firstItem="myW-cl-yjg" firstAttribute="top" secondItem="Jzq-PU-tYc" secondAttribute="bottom" constant="80" id="iPa-ns-Nfb"/>
+                            <constraint firstItem="2y8-hz-iTG" firstAttribute="leading" secondItem="CvS-e3-t2o" secondAttribute="leadingMargin" constant="40" id="gYL-zy-VdR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="myW-cl-yjg" secondAttribute="trailing" constant="40" id="j9T-4V-EGY"/>
                             <constraint firstAttribute="centerY" secondItem="Jzq-PU-tYc" secondAttribute="centerY" id="wT7-QC-prR"/>
+                            <constraint firstItem="myW-cl-yjg" firstAttribute="top" secondItem="Jzq-PU-tYc" secondAttribute="bottom" constant="30" id="zkg-Rs-J4w"/>
                         </constraints>
                     </view>
                     <connections>
@@ -114,7 +123,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ZxR-Xs-97m"/>
+                                    <segue destination="QAB-yb-UZb" kind="show" id="tmE-0x-ZPC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ob-ZI-b0i">
@@ -127,12 +136,15 @@
                                 <state key="normal" title="Menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="jVB-8m-T5v" kind="show" id="3Zt-2W-cXj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Ob-ZI-b0i" firstAttribute="leading" secondItem="1Ff-kU-q18" secondAttribute="leadingMargin" constant="40" id="1kz-Ej-o0V"/>
-                            <constraint firstItem="HuO-4n-mko" firstAttribute="trailing" secondItem="1Ff-kU-q18" secondAttribute="trailingMargin" constant="-40" id="7e9-Ao-INw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HuO-4n-mko" secondAttribute="trailing" constant="40" id="2dV-pW-ghc"/>
                             <constraint firstItem="6Ob-ZI-b0i" firstAttribute="top" secondItem="OQD-Rd-uJR" secondAttribute="bottom" constant="30" id="9Tg-R6-mpz"/>
                             <constraint firstAttribute="centerY" secondItem="OQD-Rd-uJR" secondAttribute="centerY" id="UGf-q2-C5P"/>
                             <constraint firstItem="HuO-4n-mko" firstAttribute="top" secondItem="OQD-Rd-uJR" secondAttribute="bottom" constant="30" id="jjb-Wu-1dI"/>
@@ -250,7 +262,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKT-pU-ttv" userLabel="borderOfTextLabel">
-                                <rect key="frame" x="16" y="308" width="568" height="70"/>
+                                <rect key="frame" x="16" y="305" width="568" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8j-mO-Tfx">
                                         <rect key="frame" x="4" y="0.0" width="560" height="70"/>
@@ -281,7 +293,7 @@
                             <constraint firstItem="BQe-N1-ikq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ow2-La-GxS"/>
                             <constraint firstItem="FIn-SG-DVj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QQu-t0-o7m"/>
                             <constraint firstItem="FIn-SG-DVj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="S9S-YA-akt"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PKT-pU-ttv" secondAttribute="bottom" constant="222" id="VWr-fS-40j"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PKT-pU-ttv" secondAttribute="bottom" constant="225" id="VWr-fS-40j"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3xU-ps-Bmo" secondAttribute="bottom" constant="280" id="elw-FM-zt9"/>
                             <constraint firstItem="LsC-5u-4ub" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fI9-2S-SFm"/>
                             <constraint firstItem="PKT-pU-ttv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jln-0z-2xl"/>
@@ -380,10 +392,10 @@
             </objects>
             <point key="canvasLocation" x="2271" y="377"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--SettingsViewController-->
         <scene sceneID="NP4-C8-GWS">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="SfX-CW-CYA" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" title="SettingsViewController" id="SfX-CW-CYA" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yT9-ch-9dR"/>
                         <viewControllerLayoutGuide type="bottom" id="yIf-pQ-1gM"/>
@@ -516,7 +528,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZxR-Xs-97m"/>
-        <segue reference="H1J-OF-CI4"/>
+        <segue reference="fHZ-dp-AMh"/>
+        <segue reference="KWc-9f-tJM"/>
     </inferredMetricsTieBreakers>
 </document>

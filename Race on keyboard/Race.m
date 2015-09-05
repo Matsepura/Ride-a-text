@@ -53,7 +53,6 @@
         label.attributedText = self.now;
         textField.text = @"";
         self.countOfTouchOnKeyboard++;
-//        [self makeProgressBySlider:slider and:nil];
         NSLog(@"work");
         return YES;
     } else {

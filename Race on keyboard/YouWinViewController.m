@@ -17,21 +17,38 @@
 
 @implementation YouWinViewController
 
--(void)youWinGame{
-    self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"win.png"]];
-    self.imageView.image = [self.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.imageView setTintColor:[UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1]];
-}
-
 -(void)setup{
     [self.restartButton setTintColor:[UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1]];
+    [self customizeButton:self.restartButton];
     [self.menuButton setTintColor:[UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1]];
+    [self customizeButton:self.menuButton];
     [self youWinGame];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setup];
+}
+
+-(void)youWinGame{
+    self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"win.png"]];
+    self.imageView.image = [self.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.imageView setTintColor:[UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1]];
+}
+
+
+-(void)customizeButton:(UIButton *)button{
+    CALayer *layer = button.layer;
+    
+    //Закруглим края
+    CGRect frame = button.frame;
+    
+    //половина высоты кнопки -> получим овал;
+    CGFloat radious = CGRectGetHeight(frame) / 10;
+    layer.cornerRadius = radious;
+    //Обведем кнопку
+    layer.borderColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1].CGColor;
+    layer.borderWidth = 1;
 }
 
 @end
