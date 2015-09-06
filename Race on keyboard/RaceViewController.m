@@ -35,6 +35,7 @@
 @end
 
 @implementation RaceViewController
+//проверка на удаление с гита
 
 #pragma mark - setup
 
