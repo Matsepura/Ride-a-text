@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString* car;
 -(void)youWin;
+@property (assign, nonatomic) NSInteger countOfWords;
 
 @end

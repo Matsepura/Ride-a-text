@@ -7,9 +7,9 @@
 //
 
 #import "CarSelect.h"
-#import "CarsCollection.h"
+#import "CarCheck.h"
 #import "RaceViewController.h"
-#import "trafficOneTwoThreeViewController.h"
+#import "TrafficOneTwoThreeViewController.h"
 #import "SettingsViewController.h"
 
 @interface CarSelect ()
@@ -38,7 +38,7 @@
 
 //создаем два столбика со всеми машинами для выбора машины игрока
 -(void)listOfCarToSelect{
-    CarsCollection *quantity = [CarsCollection new];
+    CarCheck *quantity = [CarCheck new];
     
     NSInteger y = self.view.center.y / 2.3;
     NSInteger moveToTheRight = 1;
@@ -101,10 +101,9 @@
 -(NSString *)loadFromUserDefaults{
     if ([[NSUserDefaults standardUserDefaults]
          stringForKey:@"playerCar"] == nil) {
-        NSString *valueToSave = [NSString stringWithFormat:@"car1.png"];
+        NSString *valueToSave = [NSString stringWithFormat:@"car4.png"];
         [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"playerCar"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"car select is nil!");
     }
     NSString *savedValue = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"playerCar"];

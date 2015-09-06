@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CarsCollection : UIView
+@interface CarCheck : UIView
 
 -(void)changeCarsColor:(UIImageView *)image;
 -(int)quantityOfCar;

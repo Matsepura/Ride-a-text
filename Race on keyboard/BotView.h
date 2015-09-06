@@ -10,7 +10,6 @@
 
 @interface BotView : UIView
 
--(void)setEasyBotByTimer:(UISlider *) slider;
 -(void)setImageBot:(UIImageView *)image;
 @property (assign, nonatomic) NSInteger timeToGameOverStart;
 

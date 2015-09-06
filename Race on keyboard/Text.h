@@ -12,5 +12,4 @@
 
 -(NSString *)text;
 
-
 @end

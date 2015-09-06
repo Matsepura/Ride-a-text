@@ -12,5 +12,6 @@
 
 -(NSString *)loadTextSelect;
 -(NSString *)loadBotSelect;
+-(NSString *)loadVibrateSelect;
 
 @end

@@ -37,30 +37,8 @@
         time = 53;
     }
     
-    NSLog(@"bot level and time %ld", (long)time);
     self.randomValue = time + arc4random_uniform(13);
-    NSLog(@"RANDOM VALUE IS %ld", (long)self.randomValue);
     return self.randomValue;
-}
-
-//анимация слайдера бота
--(void)setEasyBotByTimer:(UISlider *) slider{
-    NSInteger i = [self setRandomValue];
-    [UIView animateWithDuration:i animations:^{
-        [slider setValue:slider.maximumValue - 0.0001 animated:YES];
-        NSLog(@"slider animations work");
-        slider.minimumTrackTintColor = [UIColor clearColor];
-        slider.maximumTrackTintColor = [UIColor clearColor];
-    }];
-    [self performSelector:@selector(setEasyBotSliderMaxValue:)
-               withObject:slider
-               afterDelay:i];
-}
-
--(void)setEasyBotSliderMaxValue:(UISlider *) maxSlider{
-    
-    maxSlider.value = maxSlider.maximumValue;
-    NSLog(@"max value work and max value is %f", maxSlider.maximumValue);
 }
 
 -(void)setImageBot:(UIImageView *)image{
@@ -72,7 +50,6 @@
                                  image.frame.size.width,
                                  image.frame.size.height);
     }];
-    NSLog(@"sec is %ld", (long)self.timeToGameOverStart);
     
 }
 

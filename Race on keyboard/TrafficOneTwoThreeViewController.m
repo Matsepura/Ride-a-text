@@ -6,28 +6,26 @@
 //  Copyright (c) 2015 Semen Matsepura. All rights reserved.
 //
 
-#import "trafficOneTwoThreeViewController.h"
+#import "TrafficOneTwoThreeViewController.h"
 #import "RaceViewController.h"
 
-@interface trafficOneTwoThreeViewController ()
+@interface TrafficOneTwoThreeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (assign, nonatomic) NSInteger a;
 
 @end
 
-@implementation trafficOneTwoThreeViewController
+@implementation TrafficOneTwoThreeViewController
 
 -(void)countingOneTwoThree{
     self.a = 3;
     [self colorOfTrafficRed];
 
-    NSLog(@"self.a %ld", (long)self.a);
     [self performSelector:@selector(colorOfTrafficYellow)
                withObject:nil
                afterDelay:1];
 
-    NSLog(@"self.a %ld", (long)self.a);
     [self performSelector:@selector(colorOfTrafficGreen)
                withObject:nil
                afterDelay:1.8];

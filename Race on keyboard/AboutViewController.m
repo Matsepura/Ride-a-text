@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setup];
-    // Do any additional setup after loading the view.
 }
 
 @end

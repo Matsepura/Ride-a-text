@@ -7,11 +7,15 @@
 //
 
 #import "YouWinViewController.h"
+#import "AverageSpeed.h"
 
 @interface YouWinViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
+@property (weak, nonatomic) IBOutlet UILabel *averageSpeedLabel;
+
+@property (nonatomic) AverageSpeed* showTime;
 
 @end
 
@@ -22,6 +26,9 @@
     [self customizeButton:self.restartButton];
     [self.menuButton setTintColor:[UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1]];
     [self customizeButton:self.menuButton];
+    self.showTime = [[AverageSpeed alloc] init];
+    self.averageSpeedLabel.textColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1];
+    self.averageSpeedLabel.text = [self.showTime showAverageSpeed];
     [self youWinGame];
 }
 

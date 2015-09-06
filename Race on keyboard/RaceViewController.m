@@ -8,15 +8,15 @@
 
 #import "RaceViewController.h"
 #import "Race.h"
-#import "CarsCollection.h"
+#import "CarCheck.h"
 #import "CarSelect.h"
 #import "YouWinViewController.h"
 #import "YouLoseViewController.h"
 #import "BotView.h"
-#import "trafficOneTwoThreeViewController.h"
+#import "TrafficOneTwoThreeViewController.h"
+#import "AverageSpeed.h"
 
 @interface RaceViewController ()
-
 
 @property (weak, nonatomic) IBOutlet UIView *viewOfLabel;
 @property (weak, nonatomic) IBOutlet UILabel *labelForTextRace;
@@ -27,11 +27,10 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *xPositionOfPlayer;
 
 @property (nonatomic) Race* raceProperty;
-@property (nonatomic) CarsCollection* makeCar;
+@property (nonatomic) CarCheck* makeCar;
 @property (nonatomic) BotView* bot;
-@property (nonatomic) trafficOneTwoThreeViewController* goRace;
-
-@property (assign, nonatomic) NSInteger countOfWords;
+@property (nonatomic) TrafficOneTwoThreeViewController* goRace;
+@property (nonatomic) AverageSpeed* averageSpeed;
 
 @end
 
@@ -43,54 +42,47 @@
     [super viewDidLoad];
     [self setup];
     [UIApplication sharedApplication].applicationSupportsShakeToEdit = NO;
-    NSLog(@"viewDidLoad");
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self setImageCarOfOpponents];
-    NSLog(@"viewDidAppear");
 }
 
 -(void)setup{
     [self customizeTextView];
     self.raceProperty = [[Race alloc] init];
-    self.makeCar = [[CarsCollection alloc] init];
+    self.makeCar = [[CarCheck alloc] init];
     self.bot = [[BotView alloc] init];
+    self.averageSpeed = [[AverageSpeed alloc] init];
     
     [self.enterRaceTextField becomeFirstResponder];
     [self.raceProperty setUpTextInRace:self.labelForTextRace];
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
-//    [self setImageCarOfOpponents];
     [self customizePlayerSlider];
+    [self.averageSpeed startStopwatch];
+    [self.raceProperty initSetting];
 }
 
 -(void)setImageCarOfOpponents{
     
     [self.bot setImageBot:self.imageFirstOpponent];
     [self.makeCar changeCarsColor:self.imageFirstOpponent];
-    NSLog(@"first secc is %ld", (long)self.bot.timeToGameOverStart);
     NSInteger firstTime = self.bot.timeToGameOverStart;
-    NSLog(@"firstTime %ld", (long)firstTime);
     
     [self.bot setImageBot:self.imageSecondOpponent];
     [self.makeCar changeCarsColor:self.imageSecondOpponent];
-    NSLog(@"second secc is %ld", (long)self.bot.timeToGameOverStart);
     NSInteger secondTime = self.bot.timeToGameOverStart;
-    NSLog(@"secondTime %ld", (long)secondTime);
     
     if (firstTime < secondTime) {
-        NSLog(@"first win");
         [self performSelector:@selector(youLose)
                    withObject:nil
                    afterDelay:firstTime];
     }else{
-        NSLog(@"second win");
         [self performSelector:@selector(youLose)
                    withObject:nil
                    afterDelay:secondTime];
     }
-    
 }
 
 -(void)customizeTextView{
@@ -110,8 +102,6 @@
 -(void)customizePlayerSlider{
     CarSelect* car = [CarSelect new];
     self.imagePlayerSider.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromUserDefaults]]];
-
-    NSLog(@"машинка игрока установлена");
 }
 
 #pragma mark - check and play
@@ -119,17 +109,16 @@
 - (IBAction)touchOnEnterRaceTextFieldEnded:(id)sender {
     
     if ([self.raceProperty edittingLetter:self.labelForTextRace :self.enterRaceTextField] == YES) {
-        NSLog(@"width %f", self.imagePlayerSider.frame.size.width);
         CGFloat oneShift = (self.view.frame.size.width - 32 - self.imagePlayerSider.frame.size.width) / [self.raceProperty textLenght];
-        NSLog(@"%f", oneShift);
         self.xPositionOfPlayer.constant += oneShift;
         [UIView animateWithDuration:1.0 animations:^{
             
         [self.view layoutIfNeeded];
         }];
-        NSLog(@"yes!!!!!!");
 
         self.countOfWords ++;
+        self.averageSpeed.counfOfSign ++;
+        [self.averageSpeed saveCountOfText];
     }
     if (self.countOfWords == [self.raceProperty textLenght]) {
         [self youWin];
@@ -139,6 +128,7 @@
 #pragma  mark - you win / you lose
 
 -(void)youWin{
+    [self.averageSpeed saveTime];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YouWinViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"YouWinViewController"];
     [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
@@ -147,12 +137,12 @@
 }
 
 -(void)youLose{
+    [self.averageSpeed saveTime];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     YouLoseViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"YouLoseViewController"];
     [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
     
     [self presentViewController:rvc animated:NO completion:nil];
 }
-
 
 @end

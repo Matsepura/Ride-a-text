@@ -10,9 +10,12 @@
 
 @interface Race : UIView
 
-//-(void)makeProgressBySlider:(UIImageView *)slider and:(UITextView *)textView;
 -(BOOL)edittingLetter:(UILabel *)label :(UITextField *)textField;
 -(void)setUpTextInRace:(UILabel *)label;
 -(CGFloat)textLenght;
+-(void)initSetting;
+
+@property (assign, nonatomic) CGFloat         lenghtOfText;
+@property (assign, nonatomic) NSInteger       countOfTouchOnKeyboard;
 
 @end

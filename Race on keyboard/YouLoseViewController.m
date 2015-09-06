@@ -7,21 +7,30 @@
 //
 
 #import "YouLoseViewController.h"
+#import "AverageSpeed.h"
 
 @interface YouLoseViewController ()
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
+@property (weak, nonatomic) IBOutlet UILabel *averageSpeedLabel;
+
+@property (nonatomic) AverageSpeed* showTime;
 
 @end
 
 @implementation YouLoseViewController
 
 -(void)setup{
+
     [self.restartButton setTintColor:[UIColor colorWithRed:204/255.0 green:51/255.0 blue:51/255.0 alpha:1]];
     [self customizeButton:self.restartButton];
     [self.menuButton setTintColor:[UIColor colorWithRed:204/255.0 green:51/255.0 blue:51/255.0 alpha:1]];
     [self customizeButton:self.menuButton];
+    self.showTime = [[AverageSpeed alloc] init];
+    self.averageSpeedLabel.textColor = [UIColor colorWithRed:204/255.0 green:51/255.0 blue:51/255.0 alpha:1];
+    self.averageSpeedLabel.text = [self.showTime showAverageSpeed];
     [self youGameIsOver];
 }
 

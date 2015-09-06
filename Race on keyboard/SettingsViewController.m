@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *textLanguage;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *botDifficult;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *vibrate;
+
 @property (weak, nonatomic) IBOutlet UIImageView *carImage;
 @property (weak, nonatomic) IBOutlet UIButton *carSelectButton;
 
@@ -26,6 +28,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
     [self selectSegmentedControll];
     [self selectSegmentedControllOfBot];
+    [self selectSegmentedControllOfVibrate];
     [self customizeButtonOfSelectCar];
 }
 
@@ -47,14 +50,11 @@
     {
         case 0:
             [self saveTextSelect:@"russianText"];
-            NSLog(@"case 0");
             break;
         case 1:
             [self saveTextSelect:@"englishText"];
-            NSLog(@"case 1");
             break;
         default: //Make sure this button is checked off as Selected in IB
-            NSLog(@"case default");
             break;
     }
     return;
@@ -93,15 +93,12 @@
     {
         case 0:
             [self saveBotSelect:@"easy"];
-            NSLog(@"case easy");
             break;
         case 1:
             [self saveBotSelect:@"normal"];
-            NSLog(@"case normal");
             break;
         case 2:
             [self saveBotSelect:@"hard"];
-            NSLog(@"case hard");
             break;
     }
 }
@@ -115,7 +112,6 @@
 -(NSString *)loadBotSelect{
     NSString *savedValue = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"botSelect"];
-    
     return savedValue;
 }
 
@@ -130,24 +126,55 @@
     if ([[self loadBotSelect] isEqualToString:@"hard"]) {
         self.botDifficult.selectedSegmentIndex = 2;
     }
+}
+
+#pragma mark - customize segmented control of vibrate
+
+- (IBAction)vibrateSegmentedContorl:(id)sender {
     
+    switch ([((UISegmentedControl *)sender) selectedSegmentIndex])
+    {
+        case 0:
+            [self saveVibrateSelect:@"on"];
+            break;
+        case 1:
+            [self saveVibrateSelect:@"off"];
+            break;
+    }
+}
+
+-(void)saveVibrateSelect:(NSString *)string{
+    NSString *valueToSave = [NSString stringWithFormat:@"%@", string];
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"vibrateSelect"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(NSString *)loadVibrateSelect{
+    NSString *savedValue = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"vibrateSelect"];
+    return savedValue;
+}
+
+-(void)selectSegmentedControllOfVibrate{
+    
+    if ([[self loadVibrateSelect] isEqualToString:@"on"]) {
+        self.vibrate.selectedSegmentIndex = 0;
+    }
+    if ([[self loadVibrateSelect] isEqualToString:@"off"]) {
+        self.vibrate.selectedSegmentIndex = 1;
+    }
 }
 
 #pragma mark - customize car select
 
 -(void)setupCarImage{
-//    [self.carImage.image setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", [[NSUserDefaults standardUserDefaults] stringForKey:@"playerCar"]]] forState:UIControlStateNormal];
     CarSelect *car = [CarSelect new];
     
     self.carImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [car loadFromUserDefaults]]];
-    
 }
 
 -(void)customizeButtonOfSelectCar{
     CALayer *layer = self.carSelectButton.layer;
-    
-    //Сделаем отсутпы по краям от текста
-//    [self.carSelectButton setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
     
     [self.carSelectButton layoutIfNeeded];
     

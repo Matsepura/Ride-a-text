@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Semen Matsepura. All rights reserved.
 //
 
-#import "CarsCollection.h"
+#import "CarCheck.h"
 #import "CarSelect.h"
 
-@interface CarsCollection ()
+@interface CarCheck ()
 
 @property (assign , nonatomic) NSInteger checkRepeatFirstAndSecondCar;
 @property (assign, nonatomic)  NSInteger checkAboutRepeat;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation CarsCollection
+@implementation CarCheck
 
 // количество машин
 -(int)quantityOfCar{
