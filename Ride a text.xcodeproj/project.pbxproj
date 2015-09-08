@@ -52,13 +52,14 @@
 		703322B21B81228B00808A01 /* TrafficOneTwoThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficOneTwoThreeViewController.m; sourceTree = "<group>"; };
 		703B73041B7E2CEE00D7AEEB /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		703B73051B7E2CEE00D7AEEB /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
+		703BA2C01B9E254500B14338 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		70934DC41B9C8BCF007CEAD4 /* AverageSpeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AverageSpeed.h; sourceTree = "<group>"; };
 		70934DC51B9C8BCF007CEAD4 /* AverageSpeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AverageSpeed.m; sourceTree = "<group>"; };
 		70998F761B83CF3C00A3238C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		70998F771B83CF3C00A3238C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		70998F791B88A65700A3238C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		70998F7A1B88A65700A3238C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		70BF2E951B7A294D00831C6C /* Race on keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Race on keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70BF2E951B7A294D00831C6C /* Ride a text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ride a text.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BF2E991B7A294D00831C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70BF2E9A1B7A294D00831C6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70BF2E9C1B7A294D00831C6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,7 +69,7 @@
 		70BF2EA31B7A294D00831C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70BF2EA51B7A294D00831C6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		70BF2EA81B7A294D00831C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		70BF2EAE1B7A294D00831C6C /* Race on keyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Race on keyboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70BF2EAE1B7A294D00831C6C /* Ride a textTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ride a textTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BF2EB31B7A294D00831C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70BF2EB41B7A294E00831C6C /* Race_on_keyboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Race_on_keyboardTests.m; sourceTree = "<group>"; };
 		70BF2EBE1B7A2B9400831C6C /* RaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceViewController.h; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		02397E83DCFD250BDD2175E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				703BA2C01B9E254500B14338 /* GameKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,8 +158,8 @@
 		70BF2E961B7A294D00831C6C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				70BF2E951B7A294D00831C6C /* Race on keyboard.app */,
-				70BF2EAE1B7A294D00831C6C /* Race on keyboardTests.xctest */,
+				70BF2E951B7A294D00831C6C /* Ride a text.app */,
+				70BF2EAE1B7A294D00831C6C /* Ride a textTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,9 +221,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		70BF2E941B7A294D00831C6C /* Race on keyboard */ = {
+		70BF2E941B7A294D00831C6C /* Ride a text */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 70BF2EB81B7A294E00831C6C /* Build configuration list for PBXNativeTarget "Race on keyboard" */;
+			buildConfigurationList = 70BF2EB81B7A294E00831C6C /* Build configuration list for PBXNativeTarget "Ride a text" */;
 			buildPhases = (
 				70BF2E911B7A294D00831C6C /* Sources */,
 				70BF2E921B7A294D00831C6C /* Frameworks */,
@@ -231,14 +233,14 @@
 			);
 			dependencies = (
 			);
-			name = "Race on keyboard";
+			name = "Ride a text";
 			productName = "Race on keyboard";
-			productReference = 70BF2E951B7A294D00831C6C /* Race on keyboard.app */;
+			productReference = 70BF2E951B7A294D00831C6C /* Ride a text.app */;
 			productType = "com.apple.product-type.application";
 		};
-		70BF2EAD1B7A294D00831C6C /* Race on keyboardTests */ = {
+		70BF2EAD1B7A294D00831C6C /* Ride a textTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 70BF2EBB1B7A294E00831C6C /* Build configuration list for PBXNativeTarget "Race on keyboardTests" */;
+			buildConfigurationList = 70BF2EBB1B7A294E00831C6C /* Build configuration list for PBXNativeTarget "Ride a textTests" */;
 			buildPhases = (
 				70BF2EAA1B7A294D00831C6C /* Sources */,
 				70BF2EAB1B7A294D00831C6C /* Frameworks */,
@@ -249,9 +251,9 @@
 			dependencies = (
 				70BF2EB01B7A294D00831C6C /* PBXTargetDependency */,
 			);
-			name = "Race on keyboardTests";
+			name = "Ride a textTests";
 			productName = "Race on keyboardTests";
-			productReference = 70BF2EAE1B7A294D00831C6C /* Race on keyboardTests.xctest */;
+			productReference = 70BF2EAE1B7A294D00831C6C /* Ride a textTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -266,6 +268,11 @@
 					70BF2E941B7A294D00831C6C = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = C4BS59Y8PV;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+						};
 					};
 					70BF2EAD1B7A294D00831C6C = {
 						CreatedOnToolsVersion = 6.4;
@@ -273,7 +280,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 70BF2E901B7A294D00831C6C /* Build configuration list for PBXProject "Race on keyboard" */;
+			buildConfigurationList = 70BF2E901B7A294D00831C6C /* Build configuration list for PBXProject "Ride a text" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -286,8 +293,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				70BF2E941B7A294D00831C6C /* Race on keyboard */,
-				70BF2EAD1B7A294D00831C6C /* Race on keyboardTests */,
+				70BF2E941B7A294D00831C6C /* Ride a text */,
+				70BF2EAD1B7A294D00831C6C /* Ride a textTests */,
 			);
 		};
 /* End PBXProject section */
@@ -349,7 +356,7 @@
 /* Begin PBXTargetDependency section */
 		70BF2EB01B7A294D00831C6C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 70BF2E941B7A294D00831C6C /* Race on keyboard */;
+			target = 70BF2E941B7A294D00831C6C /* Ride a text */;
 			targetProxy = 70BF2EAF1B7A294D00831C6C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -466,7 +473,7 @@
 				INFOPLIST_FILE = "Race on keyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -480,7 +487,7 @@
 				INFOPLIST_FILE = "Race on keyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -500,7 +507,7 @@
 				INFOPLIST_FILE = "Race on keyboardTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ride a textTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Race on keyboard.app/Race on keyboard";
 			};
 			name = Debug;
@@ -516,7 +523,7 @@
 				INFOPLIST_FILE = "Race on keyboardTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ride a textTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Race on keyboard.app/Race on keyboard";
 			};
 			name = Release;
@@ -524,7 +531,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		70BF2E901B7A294D00831C6C /* Build configuration list for PBXProject "Race on keyboard" */ = {
+		70BF2E901B7A294D00831C6C /* Build configuration list for PBXProject "Ride a text" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				70BF2EB61B7A294E00831C6C /* Debug */,
@@ -533,7 +540,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70BF2EB81B7A294E00831C6C /* Build configuration list for PBXNativeTarget "Race on keyboard" */ = {
+		70BF2EB81B7A294E00831C6C /* Build configuration list for PBXNativeTarget "Ride a text" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				70BF2EB91B7A294E00831C6C /* Debug */,
@@ -542,7 +549,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70BF2EBB1B7A294E00831C6C /* Build configuration list for PBXNativeTarget "Race on keyboardTests" */ = {
+		70BF2EBB1B7A294E00831C6C /* Build configuration list for PBXNativeTarget "Ride a textTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				70BF2EBC1B7A294E00831C6C /* Debug */,
