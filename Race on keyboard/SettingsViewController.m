@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "CarSelect.h"
+#import "AverageSpeed.h"
 
 @interface SettingsViewController ()
 
@@ -18,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *carImage;
 @property (weak, nonatomic) IBOutlet UIButton *carSelectButton;
 
+@property AverageSpeed *speed;
+@property (weak, nonatomic) IBOutlet UILabel *labelToShowBestSpeed;
+
 @end
 
 @implementation SettingsViewController
@@ -25,11 +29,14 @@
 #pragma mark - setup
 
 -(void)setup{
+    self.speed = [AverageSpeed new];
+    self.navigationController.navigationBar.backItem.title = @"Setting";
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
     [self selectSegmentedControll];
     [self selectSegmentedControllOfBot];
     [self selectSegmentedControllOfVibrate];
     [self customizeButtonOfSelectCar];
+    [self showLastResult];
 }
 
 - (void)viewDidLoad {
@@ -40,6 +47,14 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setupCarImage];
+}
+
+-(void)showLastResult{
+    if ([self.speed showAverageSpeed] == nil) {
+        self.labelToShowBestSpeed.text = @"";
+    }else{
+    self.labelToShowBestSpeed.text = [NSString stringWithFormat:@"Last game result: %@", [self.speed showAverageSpeed]];
+    }
 }
 
 #pragma mark - customize segmented control of language

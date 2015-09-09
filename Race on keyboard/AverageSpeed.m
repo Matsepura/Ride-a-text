@@ -28,20 +28,31 @@
 -(NSString *)showAverageSpeed{
     self.lenght = [RaceViewController new];
     NSString *string = [NSMutableString new];
-    string = [NSString stringWithFormat:@"%@ sign in %@ seconds", [self loadCountOfText], [self loadFromUserDefaults]];
+    if ([self loadTime] == nil || [self loadCountOfText] == nil) {
+        string = nil;
+    }else{
+    string = [NSString stringWithFormat:@"%@ signs in %@ seconds", [self loadCountOfText], [self loadTime]];
+    }
     return string;
+}
+
+-(NSString *)bestSpeed{
+    
+    
+    
+    return nil;
 }
 
 #pragma mark - save and load
 
 -(void)saveTime{
-NSString *valueToSave = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSinceDate:self.timingDate]];
-[[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"AverageSpeed"];
-[[NSUserDefaults standardUserDefaults] synchronize];
+    NSString *valueToSave = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSinceDate:self.timingDate]];
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"AverageSpeed"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
--(NSString *)loadFromUserDefaults{
-
+-(NSString *)loadTime{
+    
     NSString *savedValue = [[NSUserDefaults standardUserDefaults]
                             stringForKey:@"AverageSpeed"];
     
@@ -60,5 +71,6 @@ NSString *valueToSave = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeI
                             stringForKey:@"Count"];
     return savedValue;
 }
+
 
 @end

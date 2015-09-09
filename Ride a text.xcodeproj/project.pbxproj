@@ -13,6 +13,7 @@
 		700B8DC11B7FC73700496B49 /* CarSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B8DC01B7FC73700496B49 /* CarSelect.m */; };
 		703322B31B81228B00808A01 /* TrafficOneTwoThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703322B21B81228B00808A01 /* TrafficOneTwoThreeViewController.m */; };
 		703B73061B7E2CEE00D7AEEB /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 703B73051B7E2CEE00D7AEEB /* Text.m */; };
+		707890091BA0989D002F88FB /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707890081BA0989D002F88FB /* PlayViewController.m */; };
 		70934DC61B9C8BCF007CEAD4 /* AverageSpeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 70934DC51B9C8BCF007CEAD4 /* AverageSpeed.m */; };
 		70998F781B83CF3C00A3238C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70998F771B83CF3C00A3238C /* MenuViewController.m */; };
 		70998F7B1B88A65700A3238C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70998F7A1B88A65700A3238C /* SettingsViewController.m */; };
@@ -53,6 +54,8 @@
 		703B73041B7E2CEE00D7AEEB /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		703B73051B7E2CEE00D7AEEB /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		703BA2C01B9E254500B14338 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		707890071BA0989D002F88FB /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		707890081BA0989D002F88FB /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		70934DC41B9C8BCF007CEAD4 /* AverageSpeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AverageSpeed.h; sourceTree = "<group>"; };
 		70934DC51B9C8BCF007CEAD4 /* AverageSpeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AverageSpeed.m; sourceTree = "<group>"; };
 		70998F761B83CF3C00A3238C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 			children = (
 				70998F761B83CF3C00A3238C /* MenuViewController.h */,
 				70998F771B83CF3C00A3238C /* MenuViewController.m */,
+				707890071BA0989D002F88FB /* PlayViewController.h */,
+				707890081BA0989D002F88FB /* PlayViewController.m */,
 				70998F791B88A65700A3238C /* SettingsViewController.h */,
 				70998F7A1B88A65700A3238C /* SettingsViewController.m */,
 				70E793F01B8A052A00ED9858 /* AboutViewController.h */,
@@ -326,6 +331,7 @@
 			files = (
 				700820431B81D3E300C8F85C /* YouWinViewController.m in Sources */,
 				70E95BC71B7F711B00B678FB /* CarCheck.m in Sources */,
+				707890091BA0989D002F88FB /* PlayViewController.m in Sources */,
 				70BF2EC31B7D061800831C6C /* Race.m in Sources */,
 				703322B31B81228B00808A01 /* TrafficOneTwoThreeViewController.m in Sources */,
 				70998F781B83CF3C00A3238C /* MenuViewController.m in Sources */,

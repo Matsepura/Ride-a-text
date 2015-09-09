@@ -13,7 +13,7 @@
 -(void)startStopwatch;
 -(NSString *)showAverageSpeed;
 -(void)saveTime;
--(NSString *)loadFromUserDefaults;
+-(NSString *)loadTime;
 -(void)saveCountOfText;
 -(NSString *)loadCountOfText;
 
