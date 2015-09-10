@@ -140,6 +140,9 @@
                                 <state key="normal" title="Multiplayer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9HU-Oj-n41" kind="show" id="liV-FZ-yEW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,6 +163,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4O3-bH-iDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2994" y="377"/>
+        </scene>
+        <!--Multiplayer-->
+        <scene sceneID="N6a-My-0Ed">
+            <objects>
+                <viewController title="Multiplayer" id="9HU-Oj-n41" customClass="MultiplayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d85-yr-kN3"/>
+                        <viewControllerLayoutGuide type="bottom" id="BjK-8x-5FJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SBj-st-Z8J">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVU-pp-h65" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3728" y="377"/>
         </scene>
         <!--You Lose View Controller-->
         <scene sceneID="CDD-sp-6u5">
@@ -673,10 +694,10 @@
             </objects>
             <point key="canvasLocation" x="2994" y="1096"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Game Navigation Controller-->
         <scene sceneID="4qS-re-gdk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jVB-8m-T5v" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jVB-8m-T5v" customClass="GameNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m1C-dk-TIC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
