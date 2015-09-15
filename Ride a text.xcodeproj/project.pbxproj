@@ -72,7 +72,7 @@
 		70998F771B83CF3C00A3238C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		70998F791B88A65700A3238C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		70998F7A1B88A65700A3238C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		70BF2E951B7A294D00831C6C /* Ride a text.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ride a text.temp_caseinsensitive_rename.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70BF2E951B7A294D00831C6C /* Ride a text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ride a text.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BF2E991B7A294D00831C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70BF2E9A1B7A294D00831C6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70BF2E9C1B7A294D00831C6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		70BF2E961B7A294D00831C6C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				70BF2E951B7A294D00831C6C /* Ride a text.temp_caseinsensitive_rename.app */,
+				70BF2E951B7A294D00831C6C /* Ride a text.app */,
 				70BF2EAE1B7A294D00831C6C /* Ride a text.temp_caseinsensitive_rename.xctest */,
 			);
 			name = Products;
@@ -266,7 +266,7 @@
 			);
 			name = "Ride a text";
 			productName = "Race on keyboard";
-			productReference = 70BF2E951B7A294D00831C6C /* Ride a text.temp_caseinsensitive_rename.app */;
+			productReference = 70BF2E951B7A294D00831C6C /* Ride a text.app */;
 			productType = "com.apple.product-type.application";
 		};
 		70BF2EAD1B7A294D00831C6C /* Ride a textTests */ = {
@@ -511,7 +511,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
-				PRODUCT_NAME = "Ride a text.temp_caseinsensitive_rename";
+				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -527,7 +527,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
-				PRODUCT_NAME = "Ride a text.temp_caseinsensitive_rename";
+				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
