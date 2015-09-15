@@ -82,7 +82,7 @@
 		70BF2EA31B7A294D00831C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70BF2EA51B7A294D00831C6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		70BF2EA81B7A294D00831C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		70BF2EAE1B7A294D00831C6C /* Ride a textTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ride a textTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70BF2EAE1B7A294D00831C6C /* Ride a text.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ride a text.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BF2EB31B7A294D00831C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70BF2EB41B7A294E00831C6C /* Race_on_keyboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Race_on_keyboardTests.m; sourceTree = "<group>"; };
 		70BF2EBE1B7A2B9400831C6C /* RaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceViewController.h; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				70BF2E951B7A294D00831C6C /* Ride a text.app */,
-				70BF2EAE1B7A294D00831C6C /* Ride a textTests.xctest */,
+				70BF2EAE1B7A294D00831C6C /* Ride a text.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,7 +283,7 @@
 			);
 			name = "Ride a textTests";
 			productName = "Race on keyboardTests";
-			productReference = 70BF2EAE1B7A294D00831C6C /* Ride a textTests.xctest */;
+			productReference = 70BF2EAE1B7A294D00831C6C /* Ride a text.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -292,6 +292,7 @@
 		70BF2E8D1B7A294D00831C6C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Semen Matsepura";
 				TargetAttributes = {
@@ -543,8 +544,8 @@
 				INFOPLIST_FILE = "Race on keyboardTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "Ride a textTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Race on keyboard.app/Race on keyboard";
+				PRODUCT_NAME = "Ride a text";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ride a text.temp_caseinsensitive_rename.app/Ride a text.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
@@ -559,8 +560,8 @@
 				INFOPLIST_FILE = "Race on keyboardTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "Ride a textTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Race on keyboard.app/Race on keyboard";
+				PRODUCT_NAME = "Ride a text";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ride a text.temp_caseinsensitive_rename.app/Ride a text.temp_caseinsensitive_rename";
 			};
 			name = Release;
 		};
