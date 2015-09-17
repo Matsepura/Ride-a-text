@@ -13,11 +13,11 @@
 		700B8DC11B7FC73700496B49 /* CarSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B8DC01B7FC73700496B49 /* CarSelect.m */; };
 		703322B31B81228B00808A01 /* TrafficOneTwoThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703322B21B81228B00808A01 /* TrafficOneTwoThreeViewController.m */; };
 		703B73061B7E2CEE00D7AEEB /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 703B73051B7E2CEE00D7AEEB /* Text.m */; };
+		705ACCA01BAACE27006D6CC3 /* MultiplayerNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 705ACC9F1BAACE27006D6CC3 /* MultiplayerNetworking.m */; settings = {ASSET_TAGS = (); }; };
 		706571AA1BA82E7B00E1916D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7078900F1BA0D8BC002F88FB /* GameKit.framework */; };
 		707890091BA0989D002F88FB /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707890081BA0989D002F88FB /* PlayViewController.m */; };
 		707890131BA0EE8B002F88FB /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707890121BA0EE8B002F88FB /* MultiplayerViewController.m */; };
 		707890161BA103EE002F88FB /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 707890151BA103EE002F88FB /* GameKitHelper.m */; };
-		707890191BA105D1002F88FB /* GameNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707890181BA105D1002F88FB /* GameNavigationController.m */; };
 		70934DC61B9C8BCF007CEAD4 /* AverageSpeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 70934DC51B9C8BCF007CEAD4 /* AverageSpeed.m */; };
 		70998F781B83CF3C00A3238C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70998F771B83CF3C00A3238C /* MenuViewController.m */; };
 		70998F7B1B88A65700A3238C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70998F7A1B88A65700A3238C /* SettingsViewController.m */; };
@@ -57,6 +57,8 @@
 		703322B21B81228B00808A01 /* TrafficOneTwoThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficOneTwoThreeViewController.m; sourceTree = "<group>"; };
 		703B73041B7E2CEE00D7AEEB /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		703B73051B7E2CEE00D7AEEB /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
+		705ACC9E1BAACE27006D6CC3 /* MultiplayerNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerNetworking.h; sourceTree = "<group>"; };
+		705ACC9F1BAACE27006D6CC3 /* MultiplayerNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerNetworking.m; sourceTree = "<group>"; };
 		707890071BA0989D002F88FB /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		707890081BA0989D002F88FB /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		7078900F1BA0D8BC002F88FB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -64,8 +66,6 @@
 		707890121BA0EE8B002F88FB /* MultiplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerViewController.m; sourceTree = "<group>"; };
 		707890141BA103EE002F88FB /* GameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameKitHelper.h; sourceTree = "<group>"; };
 		707890151BA103EE002F88FB /* GameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameKitHelper.m; sourceTree = "<group>"; };
-		707890171BA105D1002F88FB /* GameNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNavigationController.h; sourceTree = "<group>"; };
-		707890181BA105D1002F88FB /* GameNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameNavigationController.m; sourceTree = "<group>"; };
 		70934DC41B9C8BCF007CEAD4 /* AverageSpeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AverageSpeed.h; sourceTree = "<group>"; };
 		70934DC51B9C8BCF007CEAD4 /* AverageSpeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AverageSpeed.m; sourceTree = "<group>"; };
 		70998F761B83CF3C00A3238C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -149,12 +149,12 @@
 		7078900B1BA0D53D002F88FB /* GameKit */ = {
 			isa = PBXGroup;
 			children = (
-				707890171BA105D1002F88FB /* GameNavigationController.h */,
-				707890181BA105D1002F88FB /* GameNavigationController.m */,
-				707890111BA0EE8B002F88FB /* MultiplayerViewController.h */,
-				707890121BA0EE8B002F88FB /* MultiplayerViewController.m */,
 				707890141BA103EE002F88FB /* GameKitHelper.h */,
 				707890151BA103EE002F88FB /* GameKitHelper.m */,
+				707890111BA0EE8B002F88FB /* MultiplayerViewController.h */,
+				707890121BA0EE8B002F88FB /* MultiplayerViewController.m */,
+				705ACC9E1BAACE27006D6CC3 /* MultiplayerNetworking.h */,
+				705ACC9F1BAACE27006D6CC3 /* MultiplayerNetworking.m */,
 			);
 			name = GameKit;
 			sourceTree = "<group>";
@@ -363,7 +363,6 @@
 				707890131BA0EE8B002F88FB /* MultiplayerViewController.m in Sources */,
 				703322B31B81228B00808A01 /* TrafficOneTwoThreeViewController.m in Sources */,
 				70998F781B83CF3C00A3238C /* MenuViewController.m in Sources */,
-				707890191BA105D1002F88FB /* GameNavigationController.m in Sources */,
 				70934DC61B9C8BCF007CEAD4 /* AverageSpeed.m in Sources */,
 				70BF2EA11B7A294D00831C6C /* ViewController.m in Sources */,
 				70E793F21B8A052A00ED9858 /* AboutViewController.m in Sources */,
@@ -372,6 +371,7 @@
 				70BF2EC01B7A2B9400831C6C /* RaceViewController.m in Sources */,
 				700B8DC11B7FC73700496B49 /* CarSelect.m in Sources */,
 				700820461B823F2300C8F85C /* BotView.m in Sources */,
+				705ACCA01BAACE27006D6CC3 /* MultiplayerNetworking.m in Sources */,
 				70BF2E9E1B7A294D00831C6C /* AppDelegate.m in Sources */,
 				70BF2E9B1B7A294D00831C6C /* main.m in Sources */,
 				70998F7B1B88A65700A3238C /* SettingsViewController.m in Sources */,

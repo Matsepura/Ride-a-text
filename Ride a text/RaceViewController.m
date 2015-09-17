@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageFirstOpponent;
 @property (weak, nonatomic) IBOutlet UIImageView *imageSecondOpponent;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *xPositionOfPlayer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelConstraint;
+
 
 @property (nonatomic) Race* raceProperty;
 @property (nonatomic) CarCheck* makeCar;
@@ -160,9 +162,11 @@
     };
     if (self.view.frame.size.height == 736) {
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"6+-full.png"]];
+        self.viewOfLabel.frame = CGRectMake(self.viewOfLabel.frame.origin.x, self.viewOfLabel.frame.origin.y - 30, self.viewOfLabel.frame.size.width, self.viewOfLabel.frame.size.height);
+        self.labelConstraint.constant += 5;
+        [self.view layoutIfNeeded];
     };
 }
-
 
 
 @end
