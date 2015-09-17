@@ -56,7 +56,8 @@
     [super viewDidAppear:animated];
     
     //from game!
-        [self setImageCarOfOpponents];
+    [self setImageCarOfOpponents];
+    
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -110,11 +111,11 @@
 #pragma mark - game
 #pragma mark - setup
 
--(void)viewDidLoad{
-    [super viewDidLoad];
-    [self setup];
-    [UIApplication sharedApplication].applicationSupportsShakeToEdit = NO;
-}
+//-(void)viewDidLoad{
+//    [super viewDidLoad];
+//    [self setup];
+//    [UIApplication sharedApplication].applicationSupportsShakeToEdit = NO;
+//}
 
 -(void)setup{
     [self customizeTextView];
@@ -136,21 +137,21 @@
     
     [self.bot setImageBot:self.imageFirstOpponent];
     [self.makeCar changeCarsColor:self.imageFirstOpponent];
-    NSInteger firstTime = self.bot.timeToGameOverStart;
+//    NSInteger firstTime = self.bot.timeToGameOverStart;
     
-    [self.bot setImageBot:self.imageSecondOpponent];
+//    [self.bot setImageBot:self.imageSecondOpponent];
     [self.makeCar changeCarsColor:self.imageSecondOpponent];
-    NSInteger secondTime = self.bot.timeToGameOverStart;
+//    NSInteger secondTime = self.bot.timeToGameOverStart;
     
-    if (firstTime < secondTime) {
-        [self performSelector:@selector(youLose)
-                   withObject:nil
-                   afterDelay:firstTime];
-    }else{
-        [self performSelector:@selector(youLose)
-                   withObject:nil
-                   afterDelay:secondTime];
-    }
+//    if (firstTime < secondTime) {
+//        [self performSelector:@selector(youLose)
+//                   withObject:nil
+//                   afterDelay:firstTime];
+//    }else{
+//        [self performSelector:@selector(youLose)
+//                   withObject:nil
+//                   afterDelay:secondTime];
+//    }
 }
 
 -(void)customizeTextView{

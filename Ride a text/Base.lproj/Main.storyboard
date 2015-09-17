@@ -788,13 +788,15 @@
                             <constraint firstItem="Js2-Ht-aGR" firstAttribute="leading" secondItem="CAw-9T-pgD" secondAttribute="leadingMargin" constant="-4" id="Y0L-ku-U8g"/>
                             <constraint firstItem="ZGe-od-FEr" firstAttribute="trailing" secondItem="CAw-9T-pgD" secondAttribute="trailingMargin" constant="4" id="bK2-vG-Dcg"/>
                             <constraint firstAttribute="centerY" secondItem="VZF-3q-DR2" secondAttribute="centerY" constant="125" id="kcN-Al-70h"/>
-                            <constraint firstItem="8JA-g5-6RY" firstAttribute="top" secondItem="x9Y-Fs-Qxi" secondAttribute="bottom" constant="10" id="sKQ-2k-XNd"/>
-                            <constraint firstItem="Js2-Ht-aGR" firstAttribute="top" secondItem="x9Y-Fs-Qxi" secondAttribute="bottom" id="vBg-1A-ZkI"/>
-                            <constraint firstItem="aVF-sf-2ch" firstAttribute="top" secondItem="x9Y-Fs-Qxi" secondAttribute="bottom" id="vgZ-p3-nAy"/>
+                            <constraint firstItem="8JA-g5-6RY" firstAttribute="top" secondItem="x9Y-Fs-Qxi" secondAttribute="bottom" constant="30" id="sKQ-2k-XNd"/>
+                            <constraint firstItem="Js2-Ht-aGR" firstAttribute="top" secondItem="x9Y-Fs-Qxi" secondAttribute="bottom" constant="20" id="vBg-1A-ZkI"/>
+                            <constraint firstItem="aVF-sf-2ch" firstAttribute="top" secondItem="x9Y-Fs-Qxi" secondAttribute="bottom" constant="20" id="vgZ-p3-nAy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PYR-bs-TI0"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="enterRaceTextField" destination="oVY-ye-GbS" id="Z7G-Qd-AZI"/>
