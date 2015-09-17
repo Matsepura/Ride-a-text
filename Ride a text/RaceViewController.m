@@ -69,12 +69,12 @@
 
 -(void)setImageCarOfOpponents{
     
-    [self.bot setImageBot:self.imageFirstOpponent];
-    [self.makeCar changeCarsColor:self.imageFirstOpponent];
+    [self.bot moveImageBot:self.imageFirstOpponent];
+    [self.makeCar makeImageForCars:self.imageFirstOpponent];
     NSInteger firstTime = self.bot.timeToGameOverStart;
     
-    [self.bot setImageBot:self.imageSecondOpponent];
-    [self.makeCar changeCarsColor:self.imageSecondOpponent];
+    [self.bot moveImageBot:self.imageSecondOpponent];
+    [self.makeCar makeImageForCars:self.imageSecondOpponent];
     NSInteger secondTime = self.bot.timeToGameOverStart;
     
     if (firstTime < secondTime) {

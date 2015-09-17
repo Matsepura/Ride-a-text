@@ -41,7 +41,7 @@
     return self.randomValue;
 }
 
--(void)setImageBot:(UIImageView *)image{
+-(void)moveImageBot:(UIImageView *)image{
     NSInteger i = [self setRandomValue];
     self.timeToGameOverStart = i;
     [UIView animateWithDuration:i animations:^{

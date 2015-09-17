@@ -10,7 +10,7 @@
 
 @interface BotView : UIView
 
--(void)setImageBot:(UIImageView *)image;
+-(void)moveImageBot:(UIImageView *)image;
 @property (assign, nonatomic) NSInteger timeToGameOverStart;
 
 @end

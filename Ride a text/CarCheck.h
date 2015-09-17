@@ -10,7 +10,7 @@
 
 @interface CarCheck : UIView
 
--(void)changeCarsColor:(UIImageView *)image;
+-(void)makeImageForCars:(UIImageView *)image;
 -(int)quantityOfCar;
 
 @end
