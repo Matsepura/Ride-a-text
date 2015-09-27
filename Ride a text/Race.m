@@ -46,7 +46,6 @@
 -(BOOL)edittingLetter:(UILabel *)label :(UITextField *)textField{
     
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
-    NSLog(@"range is %d", self.countOfTouchOnKeyboard);
     
     // делает первую букву текста заглавной
     if (self.countOfTouchOnKeyboard == 0) {

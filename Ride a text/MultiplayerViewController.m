@@ -27,7 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelForTextRace;
 @property (weak, nonatomic) IBOutlet UITextField *enterRaceTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *imagePlayerSider;
-@property (weak, nonatomic) IBOutlet UIImageView *imageFirstOpponent;
 @property (weak, nonatomic) IBOutlet UIImageView *imageSecondOpponent;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *xPositionOfPlayer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelConstraint;
@@ -111,11 +110,11 @@
 #pragma mark - game
 #pragma mark - setup
 
-//-(void)viewDidLoad{
-//    [super viewDidLoad];
-//    [self setup];
-//    [UIApplication sharedApplication].applicationSupportsShakeToEdit = NO;
-//}
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self setup];
+    [UIApplication sharedApplication].applicationSupportsShakeToEdit = NO;
+}
 
 -(void)setup{
     [self customizeTextView];
@@ -135,8 +134,8 @@
 
 -(void)moveAndSetImageCarOfOpponents{
     
-    [self.bot moveImageBot:self.imageFirstOpponent];
-    [self.makeCar makeImageForCars:self.imageFirstOpponent];
+//    [self.bot moveImageBot:self.imageFirstOpponent];
+//    [self.makeCar makeImageForCars:self.imageFirstOpponent];
 //    NSInteger firstTime = self.bot.timeToGameOverStart;
     
 //    [self.bot moveImageBot:self.imageSecondOpponent];
@@ -180,10 +179,6 @@
     if ([self.raceProperty edittingLetter:self.labelForTextRace :self.enterRaceTextField] == YES) {
         CGFloat oneShift = (self.view.frame.size.width - 32 - self.imagePlayerSider.frame.size.width) / [self.raceProperty textLenght];
         self.xPositionOfPlayer.constant += oneShift;
-//        [UIView animateWithDuration:1.0 animations:^{
-//            
-//            [self.view layoutIfNeeded];
-//        }];
         [UIView animateWithDuration:1.0
                               delay:0
                             options:UIViewAnimationOptionCurveLinear

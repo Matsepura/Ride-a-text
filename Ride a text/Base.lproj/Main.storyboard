@@ -734,24 +734,17 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VZF-3q-DR2" userLabel="firstOpponentCar">
-                                <rect key="frame" x="494" y="130" width="90" height="90"/>
+                                <rect key="frame" x="16" y="130" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="L2X-M0-4eG"/>
                                     <constraint firstAttribute="height" constant="90" id="Wss-a6-hmu"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZGe-od-FEr" userLabel="secondOpponentCar">
-                                <rect key="frame" x="494" y="230" width="90" height="90"/>
+                                <rect key="frame" x="16" y="230" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="S8l-uY-43b"/>
                                     <constraint firstAttribute="width" constant="90" id="gZh-Sg-jVC"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8JA-g5-6RY" userLabel="playerCar">
-                                <rect key="frame" x="16" y="30" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="82C-GE-1nt"/>
-                                    <constraint firstAttribute="width" constant="90" id="b7T-cf-Irk"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUj-a9-Der" userLabel="borderOfTextLabel">
@@ -776,19 +769,17 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8JA-g5-6RY" firstAttribute="leading" secondItem="CAw-9T-pgD" secondAttribute="leadingMargin" constant="-4" id="1pl-my-u4U"/>
                             <constraint firstItem="pUj-a9-Der" firstAttribute="leading" secondItem="CAw-9T-pgD" secondAttribute="leadingMargin" constant="-4" id="7aU-H5-FnR"/>
                             <constraint firstItem="oVY-ye-GbS" firstAttribute="leading" secondItem="CAw-9T-pgD" secondAttribute="leadingMargin" constant="-4" id="9md-S3-Tbw"/>
                             <constraint firstItem="Pao-Y0-20K" firstAttribute="top" secondItem="pUj-a9-Der" secondAttribute="bottom" constant="225" id="CPI-ln-gLW"/>
-                            <constraint firstItem="VZF-3q-DR2" firstAttribute="trailing" secondItem="CAw-9T-pgD" secondAttribute="trailingMargin" constant="4" id="CtV-Hd-fqA"/>
+                            <constraint firstItem="VZF-3q-DR2" firstAttribute="leading" secondItem="CAw-9T-pgD" secondAttribute="leadingMargin" constant="-4" id="H9Z-vH-fX0"/>
                             <constraint firstItem="pUj-a9-Der" firstAttribute="trailing" secondItem="CAw-9T-pgD" secondAttribute="trailingMargin" constant="4" id="IVo-7k-kwV"/>
                             <constraint firstItem="Pao-Y0-20K" firstAttribute="top" secondItem="ZGe-od-FEr" secondAttribute="bottom" constant="280" id="IhC-fr-hNc"/>
                             <constraint firstItem="aVF-sf-2ch" firstAttribute="trailing" secondItem="CAw-9T-pgD" secondAttribute="trailingMargin" constant="4" id="Ncp-0o-WYO"/>
                             <constraint firstItem="Pao-Y0-20K" firstAttribute="top" secondItem="oVY-ye-GbS" secondAttribute="bottom" constant="20" id="Obo-sD-EWI"/>
+                            <constraint firstItem="ZGe-od-FEr" firstAttribute="leading" secondItem="CAw-9T-pgD" secondAttribute="leadingMargin" constant="-4" id="SPu-Mx-Z02"/>
                             <constraint firstItem="Js2-Ht-aGR" firstAttribute="leading" secondItem="CAw-9T-pgD" secondAttribute="leadingMargin" constant="-4" id="Y0L-ku-U8g"/>
-                            <constraint firstItem="ZGe-od-FEr" firstAttribute="trailing" secondItem="CAw-9T-pgD" secondAttribute="trailingMargin" constant="4" id="bK2-vG-Dcg"/>
                             <constraint firstAttribute="centerY" secondItem="VZF-3q-DR2" secondAttribute="centerY" constant="125" id="kcN-Al-70h"/>
-                            <constraint firstItem="8JA-g5-6RY" firstAttribute="top" secondItem="x9Y-Fs-Qxi" secondAttribute="bottom" constant="30" id="sKQ-2k-XNd"/>
                             <constraint firstItem="Js2-Ht-aGR" firstAttribute="top" secondItem="x9Y-Fs-Qxi" secondAttribute="bottom" constant="20" id="vBg-1A-ZkI"/>
                             <constraint firstItem="aVF-sf-2ch" firstAttribute="top" secondItem="x9Y-Fs-Qxi" secondAttribute="bottom" constant="20" id="vgZ-p3-nAy"/>
                         </constraints>
@@ -800,13 +791,12 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="enterRaceTextField" destination="oVY-ye-GbS" id="Z7G-Qd-AZI"/>
-                        <outlet property="imageFirstOpponent" destination="VZF-3q-DR2" id="AoB-bc-3rR"/>
-                        <outlet property="imagePlayerSider" destination="8JA-g5-6RY" id="vB8-35-ihX"/>
+                        <outlet property="imagePlayerSider" destination="VZF-3q-DR2" id="e7W-Cb-9y6"/>
                         <outlet property="imageSecondOpponent" destination="ZGe-od-FEr" id="a7H-AN-faP"/>
                         <outlet property="labelConstraint" destination="CPI-ln-gLW" id="XXj-Cb-5hU"/>
                         <outlet property="labelForTextRace" destination="fUe-uX-EUw" id="S86-BY-h8j"/>
                         <outlet property="viewOfLabel" destination="pUj-a9-Der" id="HFh-ME-OGN"/>
-                        <outlet property="xPositionOfPlayer" destination="1pl-my-u4U" id="YaS-OX-q1b"/>
+                        <outlet property="xPositionOfPlayer" destination="H9Z-vH-fX0" id="WUr-cj-Vrm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7W-YV-WsW" sceneMemberID="firstResponder"/>
@@ -815,7 +805,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qqo-tW-PKZ"/>
         <segue reference="aF6-ui-JV5"/>
+        <segue reference="Qqo-tW-PKZ"/>
     </inferredMetricsTieBreakers>
 </document>
