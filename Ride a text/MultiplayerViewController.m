@@ -56,7 +56,7 @@
     [super viewDidAppear:animated];
     
     //from game!
-    [self setImageCarOfOpponents];
+    [self moveAndSetImageCarOfOpponents];
     
     
     [[NSNotificationCenter defaultCenter]
@@ -133,7 +133,7 @@
     [self.raceProperty initSetting];
 }
 
--(void)setImageCarOfOpponents{
+-(void)moveAndSetImageCarOfOpponents{
     
     [self.bot moveImageBot:self.imageFirstOpponent];
     [self.makeCar makeImageForCars:self.imageFirstOpponent];
@@ -180,10 +180,17 @@
     if ([self.raceProperty edittingLetter:self.labelForTextRace :self.enterRaceTextField] == YES) {
         CGFloat oneShift = (self.view.frame.size.width - 32 - self.imagePlayerSider.frame.size.width) / [self.raceProperty textLenght];
         self.xPositionOfPlayer.constant += oneShift;
-        [UIView animateWithDuration:1.0 animations:^{
-            
-            [self.view layoutIfNeeded];
-        }];
+//        [UIView animateWithDuration:1.0 animations:^{
+//            
+//            [self.view layoutIfNeeded];
+//        }];
+        [UIView animateWithDuration:1.0
+                              delay:0
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             [self.view layoutIfNeeded];
+                         }
+                         completion:nil];
         
         self.countOfWords ++;
         self.averageSpeed.counfOfSign ++;

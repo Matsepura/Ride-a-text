@@ -46,6 +46,14 @@
 -(BOOL)edittingLetter:(UILabel *)label :(UITextField *)textField{
     
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
+    NSLog(@"range is %d", self.countOfTouchOnKeyboard);
+    
+    // делает первую букву текста заглавной
+    if (self.countOfTouchOnKeyboard == 0) {
+        NSString *text = [textField text];
+        NSString *capitalized = [[[text substringToIndex:1] uppercaseString] stringByAppendingString:[text substringFromIndex:1]];
+        textField.text = capitalized;
+    }
     
     if ([textField.text isEqual:[label.text substringWithRange:self.range]]) {
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor colorWithRed:89/255.0 green:188/255.0 blue:227/255.0 alpha:1] range:self.range];

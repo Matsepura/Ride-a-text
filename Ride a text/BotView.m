@@ -44,12 +44,23 @@
 -(void)moveImageBot:(UIImageView *)image{
     NSInteger i = [self setRandomValue];
     self.timeToGameOverStart = i;
-    [UIView animateWithDuration:i animations:^{
-        image.frame = CGRectMake(image.frame.origin.x + image.frame.origin.x - 16,
-                                 image.frame.origin.y,
-                                 image.frame.size.width,
-                                 image.frame.size.height);
-    }];
+//    [UIView animateWithDuration:i animations:^{
+//        image.frame = CGRectMake(image.frame.origin.x + image.frame.origin.x - 16,
+//                                 image.frame.origin.y,
+//                                 image.frame.size.width,
+//                                 image.frame.size.height);
+//    }];
+    [UIView animateWithDuration:i
+                          delay:0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         image.frame = CGRectMake(image.frame.origin.x + image.frame.origin.x - 16,
+                                                  image.frame.origin.y,
+                                                  image.frame.size.width,
+                                                  image.frame.size.height);
+                     }
+                     completion:nil];
+//    UIViewAnimationCurveLinear
     
 }
 
