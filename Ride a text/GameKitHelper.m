@@ -154,6 +154,9 @@ NSString *const LocalPlayerIsAuthenticated = @"local_player_authenticated";
             _matchStarted = NO;
             [_delegate matchEnded];
             break;
+    // default убрал варнинг, который ругался на "switch (state)"
+        default:
+            break;
     }
 }
 

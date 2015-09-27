@@ -84,8 +84,22 @@
 }
 
 
-- (void)playerAuthenticated {
+//- (void)playerAuthenticated {
 //    [[GameKitHelper sharedGameKitHelper] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self delegate:self];
+//}
+- (void)playerAuthenticated {
+    
+//    SKView *skView = (SKView*)self.view;
+//    GameScene *scene = (GameScene*)skView.scene;
+    
+//    UIView *gameView = self.view;
+//    MultiplayerNetworking *scene = (MultiplayerNetworking*)gameView;
+    
+    _networkingEngine = [[MultiplayerNetworking alloc] init];
+    _networkingEngine.delegate = self;
+    self.networkingEngine = _networkingEngine;
+    
+    [[GameKitHelper sharedGameKitHelper] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self delegate:_networkingEngine];
 }
 
 - (void)dealloc {
@@ -93,18 +107,25 @@
 }
 
 // Add new methods to bottom of file
-#pragma mark GameKitHelperDelegate
-
-- (void)matchStarted {
-    NSLog(@"Match started");
-}
+//#pragma mark GameKitHelperDelegate
+//
+//- (void)matchStarted {
+//    NSLog(@"Match started");
+//}
+//
+//- (void)matchEnded {
+//    NSLog(@"Match ended");
+//}
+//
+//- (void)match:(GKMatch *)match didReceiveData:(NSData *)data fromPlayer:(NSString *)playerID {
+//    NSLog(@"Received data");
+//}
+#pragma mark MultiplayerNetworkingProtocol
 
 - (void)matchEnded {
-    NSLog(@"Match ended");
-}
-
-- (void)match:(GKMatch *)match didReceiveData:(NSData *)data fromPlayer:(NSString *)playerID {
-    NSLog(@"Received data");
+    if (self.gameEndedBlock) {
+        self.gameEndedBlock();
+    }
 }
 
 #pragma mark - game
