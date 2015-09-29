@@ -27,16 +27,13 @@ extern NSString *const LocalPlayerIsAuthenticated;
 
 @property (nonatomic, strong) GKMatch *match;
 @property (nonatomic, assign) id <GameKitHelperDelegate> delegate;
-
-- (void)findMatchWithMinPlayers:(int)minPlayers maxPlayers:(int)maxPlayers
-                 viewController:(UIViewController *)viewController
-                       delegate:(id<GameKitHelperDelegate>)delegate;
+@property (nonatomic, strong) NSMutableDictionary *playersDict;
 
 + (instancetype)sharedGameKitHelper;
 - (void)authenticateLocalPlayer;
 
-#pragma mark - How To Make A Simple Multiplayer Game with Sprite Kit: Part 2/2
-
-@property (nonatomic, strong) NSMutableDictionary *playersDict;
+- (void)findMatchWithMinPlayers:(int)minPlayers maxPlayers:(int)maxPlayers
+                 viewController:(UIViewController *)viewController
+                       delegate:(id<GameKitHelperDelegate>)theDelegate;
 
 @end

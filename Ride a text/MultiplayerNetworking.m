@@ -48,13 +48,13 @@ typedef struct {
     BOOL player1Won;
 } MessageGameOver;
 
-@implementation MultiplayerNetworking
-
-uint32_t _ourRandomNumber;
-GameState _gameState;
-BOOL _isPlayer1, _receivedAllRandomNumbers;
-
-NSMutableArray *_orderOfPlayers;
+@implementation MultiplayerNetworking{
+    uint32_t _ourRandomNumber;
+    GameState _gameState;
+    BOOL _isPlayer1, _receivedAllRandomNumbers;
+    
+    NSMutableArray *_orderOfPlayers;
+}
 
 - (id)init
 {
@@ -119,7 +119,31 @@ NSMutableArray *_orderOfPlayers;
     if (_isPlayer1 && _gameState == kGameStateWaitingForStart) {
         _gameState = kGameStateActive;
         [self sendGameBegin];
+        
+        //first player
+        [self.delegate setCurrentPlayerIndex:0];
     }
+}
+
+- (NSUInteger)indexForLocalPlayer
+{
+    NSString *playerId = [GKLocalPlayer localPlayer].playerID;
+    
+    return [self indexForPlayerWithId:playerId];
+}
+
+- (NSUInteger)indexForPlayerWithId:(NSString*)playerId
+{
+    __block NSUInteger index = -1;
+    [_orderOfPlayers enumerateObjectsUsingBlock:^(NSDictionary
+                                                  *obj, NSUInteger idx, BOOL *stop){
+        NSString *pId = obj[playerIdKey];
+        if ([pId isEqualToString:playerId]) {
+            index = idx;
+            *stop = YES;
+        }
+    }];
+    return index;
 }
 
 - (void)matchEnded {
@@ -162,10 +186,20 @@ NSMutableArray *_orderOfPlayers;
             }
             [self tryStartGame];
         }
+    }else if (message->messageType == kMessageTypeGameBegin) {
+        NSLog(@"Begin game message received");
+        _gameState = kGameStateActive;
+        [self.delegate setCurrentPlayerIndex:[self indexForLocalPlayer]];
+    } else if (message->messageType == kMessageTypeMove) {
+        NSLog(@"Move message received");
+        MessageMove *messageMove = (MessageMove*)[data bytes];
+        [self.delegate movePlayerAtIndex:[self indexForPlayerWithId:playerID]];
+    } else if(message->messageType == kMessageTypeGameOver) {
+        NSLog(@"Game over message received");
     }
-
-    
 }
+
+
 
 -(void)processReceivedRandomNumber:(NSDictionary*)randomNumberDetails {
     //1
@@ -216,6 +250,17 @@ NSMutableArray *_orderOfPlayers;
         return YES;
     }
     return NO;
+}
+
+#pragma mark - send and move
+
+- (void)sendMove {
+    MessageMove messageMove;
+    messageMove.message.messageType = kMessageTypeMove;
+    NSData *data = [NSData dataWithBytes:&messageMove
+                                  length:sizeof(MessageMove)];
+    
+    [self sendData:data];
 }
 
 

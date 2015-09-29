@@ -46,6 +46,24 @@
     NSUInteger _currentPlayerIndex;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self initializeGame];
+    }
+    return self;
+}
+
+- (void)initializeGame {
+    
+    _players = [NSMutableArray arrayWithCapacity:2];
+   
+    [_players addObject:self.imagePlayerSider];
+    [_players addObject:self.xPositionOfPlayer];
+
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -108,6 +126,14 @@
     }
 }
 
+- (void)setCurrentPlayerIndex:(NSUInteger)index {
+    _currentPlayerIndex = index;
+}
+
+- (void)movePlayerAtIndex:(NSUInteger)index {
+    [_players[index] goToWin];
+}
+
 #pragma mark - game
 #pragma mark - setup
 
@@ -162,6 +188,10 @@
 
 - (IBAction)touchOnEnterRaceTextFieldEnded:(id)sender {
     
+    [self goToWin];
+}
+
+-(void)goToWin{
     if ([self.raceProperty edittingLetter:self.labelForTextRace :self.enterRaceTextField] == YES) {
         CGFloat oneShift = (self.view.frame.size.width - 32 - self.imagePlayerSider.frame.size.width) / [self.raceProperty textLenght];
         self.xPositionOfPlayer.constant += oneShift;
@@ -176,6 +206,8 @@
         self.countOfWords ++;
         self.averageSpeed.counfOfSign ++;
         [self.averageSpeed saveCountOfText];
+        [_networkingEngine sendMove];
+        NSLog(@"[_networkingEngine sendMove]");
     }
     if (self.countOfWords == [self.raceProperty textLenght]) {
         [self youWin];

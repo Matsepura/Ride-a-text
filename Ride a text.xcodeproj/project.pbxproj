@@ -154,10 +154,10 @@
 			children = (
 				707890141BA103EE002F88FB /* GameKitHelper.h */,
 				707890151BA103EE002F88FB /* GameKitHelper.m */,
-				707890111BA0EE8B002F88FB /* MultiplayerViewController.h */,
-				707890121BA0EE8B002F88FB /* MultiplayerViewController.m */,
 				705ACC9E1BAACE27006D6CC3 /* MultiplayerNetworking.h */,
 				705ACC9F1BAACE27006D6CC3 /* MultiplayerNetworking.m */,
+				707890111BA0EE8B002F88FB /* MultiplayerViewController.h */,
+				707890121BA0EE8B002F88FB /* MultiplayerViewController.m */,
 				70F03DC31BBAFAD000FB10B3 /* GameNavigationController.h */,
 				70F03DC41BBAFAD000FB10B3 /* GameNavigationController.m */,
 			);
@@ -519,6 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
 				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -535,6 +536,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
 				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

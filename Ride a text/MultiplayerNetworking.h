@@ -10,10 +10,14 @@
 
 @protocol MultiplayerNetworkingProtocol <NSObject>
 - (void)matchEnded;
+- (void)setCurrentPlayerIndex:(NSUInteger)index;
+- (void)movePlayerAtIndex:(NSUInteger)index;
 @end
 
 @interface MultiplayerNetworking : NSObject<GameKitHelperDelegate>
 @property (nonatomic, assign) id<MultiplayerNetworkingProtocol> delegate;
+
+- (void)sendMove;
 
 @end
 
