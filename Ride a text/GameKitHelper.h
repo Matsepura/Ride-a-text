@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#pragma mark - How To Make A Simple Multiplayer Game with Sprite Kit: Part 1/2
 @import GameKit;
 
 @protocol GameKitHelperDelegate
@@ -33,5 +34,9 @@ extern NSString *const LocalPlayerIsAuthenticated;
 
 + (instancetype)sharedGameKitHelper;
 - (void)authenticateLocalPlayer;
+
+#pragma mark - How To Make A Simple Multiplayer Game with Sprite Kit: Part 2/2
+
+@property (nonatomic, strong) NSMutableDictionary *playersDict;
 
 @end

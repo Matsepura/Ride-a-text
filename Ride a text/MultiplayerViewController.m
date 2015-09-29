@@ -40,23 +40,14 @@
 
 @end
 
-@implementation MultiplayerViewController
-
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//
-//
-//    // Do any additional setup after loading the view.
-//}
-
-// Add to the implementation section
+@implementation MultiplayerViewController{
+    MultiplayerNetworking *_networkingEngine;
+    NSMutableArray *_players;
+    NSUInteger _currentPlayerIndex;
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    //from game!
-    [self moveAndSetImageCarOfOpponents];
-    
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -66,6 +57,9 @@
     
     [[GameKitHelper sharedGameKitHelper]
      authenticateLocalPlayer];
+    
+    //from game!
+    [self moveAndSetImageCarOfOpponents];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerAuthenticated)
                                                  name:LocalPlayerIsAuthenticated object:nil];
@@ -83,17 +77,17 @@
                                        completion:nil];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
-//- (void)playerAuthenticated {
-//    [[GameKitHelper sharedGameKitHelper] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self delegate:self];
-//}
 - (void)playerAuthenticated {
     
 //    SKView *skView = (SKView*)self.view;
 //    GameScene *scene = (GameScene*)skView.scene;
     
-//    UIView *gameView = self.view;
-//    MultiplayerNetworking *scene = (MultiplayerNetworking*)gameView;
+    // plugin com.apple.GameCenterUI.GameCenterMatchmakerExtension invalidated
+    // возможно ошибка плагина тут
     
     _networkingEngine = [[MultiplayerNetworking alloc] init];
     _networkingEngine.delegate = self;
@@ -102,24 +96,10 @@
     [[GameKitHelper sharedGameKitHelper] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self delegate:_networkingEngine];
 }
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+- (IBAction)testGame:(id)sender {
+    [self playerAuthenticated];
 }
 
-// Add new methods to bottom of file
-//#pragma mark GameKitHelperDelegate
-//
-//- (void)matchStarted {
-//    NSLog(@"Match started");
-//}
-//
-//- (void)matchEnded {
-//    NSLog(@"Match ended");
-//}
-//
-//- (void)match:(GKMatch *)match didReceiveData:(NSData *)data fromPlayer:(NSString *)playerID {
-//    NSLog(@"Received data");
-//}
 #pragma mark MultiplayerNetworkingProtocol
 
 - (void)matchEnded {
@@ -155,23 +135,8 @@
 
 -(void)moveAndSetImageCarOfOpponents{
     
-//    [self.bot moveImageBot:self.imageFirstOpponent];
-//    [self.makeCar makeImageForCars:self.imageFirstOpponent];
-//    NSInteger firstTime = self.bot.timeToGameOverStart;
-    
-//    [self.bot moveImageBot:self.imageSecondOpponent];
     [self.makeCar makeImageForCars:self.imageSecondOpponent];
-//    NSInteger secondTime = self.bot.timeToGameOverStart;
-    
-//    if (firstTime < secondTime) {
-//        [self performSelector:@selector(youLose)
-//                   withObject:nil
-//                   afterDelay:firstTime];
-//    }else{
-//        [self performSelector:@selector(youLose)
-//                   withObject:nil
-//                   afterDelay:secondTime];
-//    }
+
 }
 
 -(void)customizeTextView{

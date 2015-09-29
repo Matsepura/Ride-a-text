@@ -32,6 +32,7 @@
 		70BF2EC31B7D061800831C6C /* Race.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BF2EC21B7D061800831C6C /* Race.m */; };
 		70E793F21B8A052A00ED9858 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E793F11B8A052A00ED9858 /* AboutViewController.m */; };
 		70E95BC71B7F711B00B678FB /* CarCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E95BC61B7F711B00B678FB /* CarCheck.m */; };
+		70F03DC51BBAFAD000FB10B3 /* GameNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F03DC41BBAFAD000FB10B3 /* GameNavigationController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		70E793F11B8A052A00ED9858 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		70E95BC51B7F711B00B678FB /* CarCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarCheck.h; sourceTree = "<group>"; };
 		70E95BC61B7F711B00B678FB /* CarCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarCheck.m; sourceTree = "<group>"; };
+		70F03DC31BBAFAD000FB10B3 /* GameNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNavigationController.h; sourceTree = "<group>"; };
+		70F03DC41BBAFAD000FB10B3 /* GameNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				707890121BA0EE8B002F88FB /* MultiplayerViewController.m */,
 				705ACC9E1BAACE27006D6CC3 /* MultiplayerNetworking.h */,
 				705ACC9F1BAACE27006D6CC3 /* MultiplayerNetworking.m */,
+				70F03DC31BBAFAD000FB10B3 /* GameNavigationController.h */,
+				70F03DC41BBAFAD000FB10B3 /* GameNavigationController.m */,
 			);
 			name = GameKit;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				70998F781B83CF3C00A3238C /* MenuViewController.m in Sources */,
 				70934DC61B9C8BCF007CEAD4 /* AverageSpeed.m in Sources */,
 				70BF2EA11B7A294D00831C6C /* ViewController.m in Sources */,
+				70F03DC51BBAFAD000FB10B3 /* GameNavigationController.m in Sources */,
 				70E793F21B8A052A00ED9858 /* AboutViewController.m in Sources */,
 				700820491B8262FE00C8F85C /* YouLoseViewController.m in Sources */,
 				703B73061B7E2CEE00D7AEEB /* Text.m in Sources */,
@@ -508,7 +514,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
 				INFOPLIST_FILE = "Ride a text/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
 				PRODUCT_NAME = "Ride a text";
@@ -524,7 +530,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
 				INFOPLIST_FILE = "Ride a text/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
 				PRODUCT_NAME = "Ride a text";

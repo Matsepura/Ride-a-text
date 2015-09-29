@@ -678,10 +678,10 @@
             </objects>
             <point key="canvasLocation" x="2994" y="1096"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Game Navigation Controller-->
         <scene sceneID="4qS-re-gdk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jVB-8m-T5v" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jVB-8m-T5v" customClass="GameNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m1C-dk-TIC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -714,6 +714,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="testGame:" destination="1dg-t4-PDQ" eventType="touchUpInside" id="KBD-wd-koG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVF-sf-2ch">
                                 <rect key="frame" x="545" y="20" width="39" height="30"/>
@@ -805,7 +808,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xIN-fP-iBf"/>
-        <segue reference="Qqo-tW-PKZ"/>
+        <segue reference="3Zt-2W-cXj"/>
+        <segue reference="tmE-0x-ZPC"/>
     </inferredMetricsTieBreakers>
 </document>

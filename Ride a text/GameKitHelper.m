@@ -63,6 +63,33 @@ NSString *const LocalPlayerIsAuthenticated = @"local_player_authenticated";
     };
 }
 
+- (void)lookupPlayers {
+    
+    NSLog(@"Looking up %lu players...", (unsigned long)_match.playerIDs.count);
+    // поставил (NSArray*)_match.players вместо _match.playerIDs, посмтрим, что будет
+    [GKPlayer loadPlayersForIdentifiers:_match.playerIDs withCompletionHandler:^(NSArray *players, NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"Error retrieving player info: %@", error.localizedDescription);
+            _matchStarted = NO;
+            [_delegate matchEnded];
+        } else {
+            
+            // Populate players dict
+            _playersDict = [NSMutableDictionary dictionaryWithCapacity:players.count];
+            for (GKPlayer *player in players) {
+                NSLog(@"Found player: %@", player.alias);
+                [_playersDict setObject:player forKey:player.playerID];
+            }
+            [_playersDict setObject:[GKLocalPlayer localPlayer] forKey:[GKLocalPlayer localPlayer].playerID];
+            
+            // Notify delegate match can begin
+            _matchStarted = YES;
+            [_delegate matchStarted];
+        }
+    }];
+}
+
 - (void)setAuthenticationViewController:(UIViewController *)authenticationViewController
 {
     if (authenticationViewController != nil) {
@@ -122,6 +149,7 @@ NSString *const LocalPlayerIsAuthenticated = @"local_player_authenticated";
     match.delegate = self;
     if (!_matchStarted && match.expectedPlayerCount == 0) {
         NSLog(@"Ready to start match!");
+        [self lookupPlayers];
     }
 }
 
@@ -145,6 +173,7 @@ NSString *const LocalPlayerIsAuthenticated = @"local_player_authenticated";
             
             if (!_matchStarted && match.expectedPlayerCount == 0) {
                 NSLog(@"Ready to start match!");
+                [self lookupPlayers];
             }
             
             break;
