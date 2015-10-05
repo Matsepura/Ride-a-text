@@ -142,11 +142,21 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arr" translatesAutoresizingMaskIntoConstraints="NO" id="1Ry-pD-uld">
+                                <rect key="frame" x="38" y="337" width="175" height="165"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="M9E-cO-oNP"/>
+                                    <constraint firstAttribute="width" constant="175" id="Sib-yT-Wpt"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1Ry-pD-uld" firstAttribute="top" secondItem="Bpz-Vu-yf9" secondAttribute="bottom" constant="-73" id="FM6-Wc-Avt"/>
                             <constraint firstItem="Bpz-Vu-yf9" firstAttribute="leading" secondItem="bRr-DM-64w" secondAttribute="leadingMargin" constant="90" id="Fu3-Y5-o22"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bpz-Vu-yf9" secondAttribute="trailing" constant="90" id="KXf-Uv-YQe"/>
+                            <constraint firstItem="Bpz-Vu-yf9" firstAttribute="leading" secondItem="1Ry-pD-uld" secondAttribute="trailing" constant="-103" id="YYI-yU-5H2"/>
                             <constraint firstItem="hBo-RE-ed7" firstAttribute="leading" secondItem="bRr-DM-64w" secondAttribute="leadingMargin" constant="90" id="gyL-TZ-qWf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hBo-RE-ed7" secondAttribute="trailing" constant="90" id="ius-ga-fyW"/>
                             <constraint firstAttribute="centerY" secondItem="hBo-RE-ed7" secondAttribute="centerY" constant="50" id="jo4-eo-hXR"/>
@@ -837,10 +847,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arr" width="320" height="320"/>
         <image name="iconForApp" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="xIN-fP-iBf"/>
         <segue reference="3Zt-2W-cXj"/>
-        <segue reference="tmE-0x-ZPC"/>
     </inferredMetricsTieBreakers>
 </document>
