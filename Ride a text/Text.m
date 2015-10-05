@@ -15,10 +15,11 @@
     SettingsViewController *textSet = [SettingsViewController new];
     
     NSString *selectedText = [NSString new];
+    NSString *localizeText = [NSString stringWithFormat:NSLocalizedString(@"localizeLanguage", nil)];
     
-    if ([[textSet loadTextSelect] isEqualToString:@"englishText"]) {
+    if ([[textSet loadTextSelect] isEqualToString:@"englishText"] || [localizeText isEqualToString:@"englishText"]) {
         selectedText = [self englishText];
-    } else {
+    } else if ([[textSet loadTextSelect] isEqualToString:@"russianText"] || [localizeText isEqualToString:@"russianText"]) {
         selectedText = [self russianText];
     }
     

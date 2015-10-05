@@ -27,6 +27,7 @@
 		70BF2EB51B7A294E00831C6C /* Race_on_keyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BF2EB41B7A294E00831C6C /* Race_on_keyboardTests.m */; };
 		70BF2EC01B7A2B9400831C6C /* RaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BF2EBF1B7A2B9400831C6C /* RaceViewController.m */; };
 		70BF2EC31B7D061800831C6C /* Race.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BF2EC21B7D061800831C6C /* Race.m */; };
+		70D628641BC2EE8200984569 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70D628661BC2EE8200984569 /* Localizable.strings */; };
 		70E793F21B8A052A00ED9858 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E793F11B8A052A00ED9858 /* AboutViewController.m */; };
 		70E95BC71B7F711B00B678FB /* CarCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E95BC61B7F711B00B678FB /* CarCheck.m */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,8 @@
 		70BF2EBF1B7A2B9400831C6C /* RaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceViewController.m; sourceTree = "<group>"; };
 		70BF2EC11B7D061800831C6C /* Race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Race.h; sourceTree = "<group>"; };
 		70BF2EC21B7D061800831C6C /* Race.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Race.m; sourceTree = "<group>"; };
+		70D628651BC2EE8200984569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		70D628671BC2EEBC00984569 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		70E793F01B8A052A00ED9858 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		70E793F11B8A052A00ED9858 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		70E95BC51B7F711B00B678FB /* CarCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarCheck.h; sourceTree = "<group>"; };
@@ -176,6 +179,7 @@
 			children = (
 				70BF2E9C1B7A294D00831C6C /* AppDelegate.h */,
 				70BF2E9D1B7A294D00831C6C /* AppDelegate.m */,
+				70D628661BC2EE8200984569 /* Localizable.strings */,
 				70BF2E9F1B7A294D00831C6C /* ViewController.h */,
 				70BF2EA01B7A294D00831C6C /* ViewController.m */,
 				70BF2EA21B7A294D00831C6C /* Main.storyboard */,
@@ -296,6 +300,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 70BF2E8C1B7A294D00831C6C;
 			productRefGroup = 70BF2E961B7A294D00831C6C /* Products */;
@@ -314,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70BF2EA41B7A294D00831C6C /* Main.storyboard in Resources */,
+				70D628641BC2EE8200984569 /* Localizable.strings in Resources */,
 				70BF2EA91B7A294D00831C6C /* LaunchScreen.xib in Resources */,
 				70BF2EA61B7A294D00831C6C /* Images.xcassets in Resources */,
 			);
@@ -386,6 +392,15 @@
 				70BF2EA81B7A294D00831C6C /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		70D628661BC2EE8200984569 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70D628651BC2EE8200984569 /* Base */,
+				70D628671BC2EEBC00984569 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -487,7 +502,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
 				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -504,7 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
 				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
