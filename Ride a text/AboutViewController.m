@@ -25,4 +25,10 @@
     [self setup];
 }
 
+- (IBAction)goToSitePuredRu:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.pured.ru"]];
+
+}
+
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jVB-8m-T5v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jVB-8m-T5v">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -658,18 +658,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="designed by Freepik.com" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-6I-L0B">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cars designed by Freepik.com" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-6I-L0B">
                                 <rect key="frame" x="16" y="563" width="568" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heC-wz-f7a">
+                                <rect key="frame" x="523" y="525" width="63" height="30"/>
+                                <state key="normal" title=" pured.ru"/>
+                                <connections>
+                                    <action selector="goToSitePuredRu:" destination="jrC-4V-2MZ" eventType="touchUpInside" id="Ucg-gk-4IR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="background and icon designed by:" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21Z-fn-SHy">
+                                <rect key="frame" x="297" y="526" width="227" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="O1D-KK-GTw"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconForApp" translatesAutoresizingMaskIntoConstraints="NO" id="gse-WC-yZN">
+                                <rect key="frame" x="175" y="135" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="H3X-pq-wc6"/>
+                                    <constraint firstAttribute="width" constant="250" id="YrL-39-ihz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="21Z-fn-SHy" firstAttribute="leading" secondItem="juC-N4-iPL" secondAttribute="leadingMargin" priority="249" constant="281" id="3i2-oq-PVF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="heC-wz-f7a" secondAttribute="trailing" constant="-6" id="4AW-xz-SLK"/>
                             <constraint firstItem="zbM-kB-250" firstAttribute="top" secondItem="cqi-6I-L0B" secondAttribute="bottom" constant="20" id="6kJ-HT-GOT"/>
+                            <constraint firstItem="gse-WC-yZN" firstAttribute="centerX" secondItem="juC-N4-iPL" secondAttribute="centerX" id="7gU-sb-3B7"/>
                             <constraint firstItem="cqi-6I-L0B" firstAttribute="trailing" secondItem="juC-N4-iPL" secondAttribute="trailingMargin" constant="4" id="FeB-NB-OAz"/>
+                            <constraint firstItem="heC-wz-f7a" firstAttribute="leading" secondItem="21Z-fn-SHy" secondAttribute="trailing" priority="249" constant="-1" id="I6t-db-hil"/>
+                            <constraint firstItem="gse-WC-yZN" firstAttribute="centerY" secondItem="juC-N4-iPL" secondAttribute="centerY" constant="-40" id="ROl-AP-Gas"/>
+                            <constraint firstItem="cqi-6I-L0B" firstAttribute="top" secondItem="21Z-fn-SHy" secondAttribute="bottom" constant="7" id="dQW-Ys-7pQ"/>
+                            <constraint firstItem="cqi-6I-L0B" firstAttribute="top" secondItem="heC-wz-f7a" secondAttribute="bottom" constant="8" id="j9W-n4-X0K"/>
+                            <constraint firstItem="heC-wz-f7a" firstAttribute="leading" secondItem="21Z-fn-SHy" secondAttribute="trailing" priority="251" constant="-1" id="s4M-Xf-rvf"/>
                             <constraint firstItem="cqi-6I-L0B" firstAttribute="leading" secondItem="juC-N4-iPL" secondAttribute="leadingMargin" constant="-4" id="vQ3-K4-fvn"/>
                         </constraints>
                     </view>
@@ -807,6 +839,9 @@
             <point key="canvasLocation" x="3728" y="377"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconForApp" width="512" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Zt-2W-cXj"/>
         <segue reference="tmE-0x-ZPC"/>
