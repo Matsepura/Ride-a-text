@@ -7,10 +7,14 @@
 //
 
 #import "PlayViewController.h"
+#import "AverageSpeed.h"
 
 @interface PlayViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *singleplayerButton;
 @property (weak, nonatomic) IBOutlet UIButton *multiplayerButton;
+@property (weak, nonatomic) IBOutlet UILabel *labelOfLastResult;
+
+@property AverageSpeed *speed;
 
 @end
 
@@ -21,6 +25,7 @@
 -(void)setup{
     [self customizeStyleOfView];
     [self customizeButton];
+    [self showLastResult];
 }
 
 - (void)viewDidLoad {
@@ -29,6 +34,17 @@
 }
 
 #pragma mark - customize
+
+-(void)showLastResult{
+    
+    self.speed = [AverageSpeed new];
+    
+    if ([self.speed showAverageSpeed] == nil) {
+        self.labelOfLastResult.text = @"";
+    }else{
+        self.labelOfLastResult.text = [NSString stringWithFormat:@"Last game result: %@", [self.speed showAverageSpeed]];
+    }
+}
 
 -(void)customizeStyleOfView{
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1];

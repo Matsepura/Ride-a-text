@@ -150,13 +150,22 @@
                                     <constraint firstAttribute="width" constant="175" id="Sib-yT-Wpt"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best record: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7A-Ca-SZB">
+                                <rect key="frame" x="16" y="562" width="568" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Bl8-zG-GoB" firstAttribute="top" secondItem="p7A-Ca-SZB" secondAttribute="bottom" constant="20" id="3s9-ki-7Fw"/>
                             <constraint firstItem="1Ry-pD-uld" firstAttribute="top" secondItem="Bpz-Vu-yf9" secondAttribute="bottom" constant="-73" id="FM6-Wc-Avt"/>
                             <constraint firstItem="Bpz-Vu-yf9" firstAttribute="leading" secondItem="bRr-DM-64w" secondAttribute="leadingMargin" constant="90" id="Fu3-Y5-o22"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bpz-Vu-yf9" secondAttribute="trailing" constant="90" id="KXf-Uv-YQe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p7A-Ca-SZB" secondAttribute="trailing" constant="-4" id="R2I-x3-8Rb"/>
                             <constraint firstItem="Bpz-Vu-yf9" firstAttribute="leading" secondItem="1Ry-pD-uld" secondAttribute="trailing" constant="-103" id="YYI-yU-5H2"/>
+                            <constraint firstItem="p7A-Ca-SZB" firstAttribute="leading" secondItem="bRr-DM-64w" secondAttribute="leadingMargin" constant="-4" id="Z2n-1D-dgE"/>
                             <constraint firstItem="hBo-RE-ed7" firstAttribute="leading" secondItem="bRr-DM-64w" secondAttribute="leadingMargin" constant="90" id="gyL-TZ-qWf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hBo-RE-ed7" secondAttribute="trailing" constant="90" id="ius-ga-fyW"/>
                             <constraint firstAttribute="centerY" secondItem="hBo-RE-ed7" secondAttribute="centerY" constant="50" id="jo4-eo-hXR"/>
@@ -164,6 +173,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelOfLastResult" destination="p7A-Ca-SZB" id="Xy2-uX-6jC"/>
                         <outlet property="multiplayerButton" destination="Bpz-Vu-yf9" id="lTs-sU-Qly"/>
                         <outlet property="singleplayerButton" destination="hBo-RE-ed7" id="XkY-m7-Eo5"/>
                     </connections>
@@ -665,7 +675,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cars designed by Freepik.com" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-6I-L0B">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cars designed by: Freepik.com" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-6I-L0B">
                                 <rect key="frame" x="16" y="563" width="568" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -674,6 +684,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heC-wz-f7a">
                                 <rect key="frame" x="523" y="525" width="63" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title=" pured.ru"/>
                                 <connections>
                                     <action selector="goToSitePuredRu:" destination="jrC-4V-2MZ" eventType="touchUpInside" id="Ucg-gk-4IR"/>
@@ -689,13 +700,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconForApp" translatesAutoresizingMaskIntoConstraints="NO" id="gse-WC-yZN">
-                                <rect key="frame" x="175" y="135" width="250" height="250"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconForAboutViewController" translatesAutoresizingMaskIntoConstraints="NO" id="gse-WC-yZN">
+                                <rect key="frame" x="200" y="133" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="H3X-pq-wc6"/>
-                                    <constraint firstAttribute="width" constant="250" id="YrL-39-ihz"/>
+                                    <constraint firstAttribute="height" constant="200" id="H3X-pq-wc6"/>
+                                    <constraint firstAttribute="width" constant="200" id="YrL-39-ihz"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ride a text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ovd-jh-7vf">
+                                <rect key="frame" x="200" y="351" width="200" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eXM-58-icX"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -704,8 +725,11 @@
                             <constraint firstItem="zbM-kB-250" firstAttribute="top" secondItem="cqi-6I-L0B" secondAttribute="bottom" constant="20" id="6kJ-HT-GOT"/>
                             <constraint firstItem="gse-WC-yZN" firstAttribute="centerX" secondItem="juC-N4-iPL" secondAttribute="centerX" id="7gU-sb-3B7"/>
                             <constraint firstItem="cqi-6I-L0B" firstAttribute="trailing" secondItem="juC-N4-iPL" secondAttribute="trailingMargin" constant="4" id="FeB-NB-OAz"/>
+                            <constraint firstItem="Ovd-jh-7vf" firstAttribute="top" secondItem="gse-WC-yZN" secondAttribute="bottom" constant="18" id="G50-JV-GrE"/>
                             <constraint firstItem="heC-wz-f7a" firstAttribute="leading" secondItem="21Z-fn-SHy" secondAttribute="trailing" priority="249" constant="-1" id="I6t-db-hil"/>
-                            <constraint firstItem="gse-WC-yZN" firstAttribute="centerY" secondItem="juC-N4-iPL" secondAttribute="centerY" constant="-40" id="ROl-AP-Gas"/>
+                            <constraint firstItem="gse-WC-yZN" firstAttribute="centerY" secondItem="juC-N4-iPL" secondAttribute="centerY" constant="-67" id="ROl-AP-Gas"/>
+                            <constraint firstItem="Ovd-jh-7vf" firstAttribute="width" secondItem="gse-WC-yZN" secondAttribute="width" id="Z79-Uv-MSg"/>
+                            <constraint firstItem="Ovd-jh-7vf" firstAttribute="centerX" secondItem="juC-N4-iPL" secondAttribute="centerX" id="bgF-I5-gH0"/>
                             <constraint firstItem="cqi-6I-L0B" firstAttribute="top" secondItem="21Z-fn-SHy" secondAttribute="bottom" constant="7" id="dQW-Ys-7pQ"/>
                             <constraint firstItem="cqi-6I-L0B" firstAttribute="top" secondItem="heC-wz-f7a" secondAttribute="bottom" constant="8" id="j9W-n4-X0K"/>
                             <constraint firstItem="heC-wz-f7a" firstAttribute="leading" secondItem="21Z-fn-SHy" secondAttribute="trailing" priority="251" constant="-1" id="s4M-Xf-rvf"/>
@@ -848,7 +872,7 @@
     </scenes>
     <resources>
         <image name="arr" width="320" height="320"/>
-        <image name="iconForApp" width="512" height="512"/>
+        <image name="iconForAboutViewController" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xIN-fP-iBf"/>
