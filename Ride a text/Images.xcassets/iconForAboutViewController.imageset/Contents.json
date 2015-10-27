@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "iconForApp.png"
+      "filename" : "iconForAboutViewController.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "iconForApp@2x.png",
+      "filename" : "iconForAboutViewController@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "iconForApp@3x.png"
+      "filename" : "iconForAboutViewController@3x.png"
     }
   ],
   "info" : {
