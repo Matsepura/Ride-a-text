@@ -499,7 +499,7 @@
 				INFOPLIST_FILE = "Ride a text/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Ride-a-text";
 				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -516,7 +516,7 @@
 				INFOPLIST_FILE = "Ride a text/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ISO.Ride-a-text";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Ride-a-text";
 				PRODUCT_NAME = "Ride a text";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

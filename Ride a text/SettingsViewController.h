@@ -14,5 +14,4 @@
 -(NSString *)loadBotSelect;
 -(NSString *)loadVibrateSelect;
 
--(NSString*)showLastResultForAnotherVC;
 @end
