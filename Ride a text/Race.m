@@ -93,7 +93,6 @@
         }
         if ([textField.text isEqualToString:@" "] && self.comma == 1) {
             
-            [textField setKeyboardType:UIKeyboardTypeASCIICapable];
             [textField resignFirstResponder];
             [textField becomeFirstResponder];
             
