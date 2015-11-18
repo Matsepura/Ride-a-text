@@ -48,11 +48,11 @@
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
     
     // делает первую букву текста заглавной
-    if (self.countOfTouchOnKeyboard == 0 || self.afterComma == 1) {
+    if (self.countOfTouchOnKeyboard == 0 || self.afterDot == 1) {
         NSString *text = [textField text];
         NSString *capitalized = [[[text substringToIndex:1] uppercaseString] stringByAppendingString:[text substringFromIndex:1]];
         textField.text = capitalized;
-        self.afterComma = 0;
+        self.afterDot = 0;
     }
     //!!!по идее сюда добавить ифы для большой буквы во втором предложении!!!
     
@@ -64,24 +64,50 @@
             [textField.text isEqualToString:@"!"] ||
             [textField.text isEqualToString:@"?"]) {
             
+            self.dot = 1;
+        }
+        if ([textField.text isEqualToString:@" "] && self.dot == 1) {
+            [textField resignFirstResponder];
+            [textField becomeFirstResponder];
+            
+//            [textField setKeyboardType:UIKeyboardTypeDefault];
+//            
+//            if (self.keyboardChange == 1) {
+//                [textField resignFirstResponder];
+//                [textField becomeFirstResponder];
+//                NSLog(@"resignFirstResponder");
+//            }
+//            if (self.keyboardChange == 0) {
+//                [textField reloadInputViews];
+//                NSLog(@"reloadInputViews");
+//                self.keyboardChange = 1;
+//            }
+
+            self.afterDot = 1;
+            self.dot = 0;
+        }
+        if ([textField.text isEqualToString:@","] ||
+            [textField.text isEqualToString:@"-"]) {
+            
             self.comma = 1;
         }
         if ([textField.text isEqualToString:@" "] && self.comma == 1) {
             
             [textField setKeyboardType:UIKeyboardTypeASCIICapable];
+            [textField resignFirstResponder];
+            [textField becomeFirstResponder];
             
-            if (self.keyboardChange == 1) {
-                [textField resignFirstResponder];
-                [textField becomeFirstResponder];
-                NSLog(@"resignFirstResponder");
-            }
-            if (self.keyboardChange == 0) {
-                [textField reloadInputViews];
-                NSLog(@"reloadInputViews");
-                self.keyboardChange = 1;
-            }
-
-            self.afterComma = 1;
+//            if (self.keyboardChange == 1) {
+//                [textField resignFirstResponder];
+//                [textField becomeFirstResponder];
+//                NSLog(@"resignFirstResponder");
+//            }
+//            if (self.keyboardChange == 0) {
+//                [textField reloadInputViews];
+//                NSLog(@"reloadInputViews");
+//                self.keyboardChange = 1;
+//            }
+            
             self.comma = 0;
         }
         

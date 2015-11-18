@@ -12,19 +12,19 @@
 @implementation Text
 
 -(NSString *)text{
-    SettingsViewController *textSet = [SettingsViewController new];
-    
-    NSString *selectedText = [NSString new];
-    NSString *localizeText = [NSString stringWithFormat:NSLocalizedString(@"localizeLanguage", nil)];
-    
-    if ([[textSet loadTextSelect] isEqualToString:@"englishText"] || [localizeText isEqualToString:@"englishText"]) {
-        selectedText = [self englishText];
-    } else if ([[textSet loadTextSelect] isEqualToString:@"russianText"] || [localizeText isEqualToString:@"russianText"]) {
-        selectedText = [self russianText];
-    }
+//    SettingsViewController *textSet = [SettingsViewController new];
+//    
+//    NSString *selectedText = [NSString new];
+//    NSString *localizeText = [NSString stringWithFormat:NSLocalizedString(@"localizeLanguage", nil)];
+//    
+//    if ([[textSet loadTextSelect] isEqualToString:@"englishText"] || [localizeText isEqualToString:@"englishText"]) {
+//        selectedText = [self englishText];
+//    } else if ([[textSet loadTextSelect] isEqualToString:@"russianText"] || [localizeText isEqualToString:@"russianText"]) {
+//        selectedText = [self russianText];
+//    }
 
 // for testing!
-//    NSString *selectedText = @"Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa.";
+    NSString *selectedText = @"Aaa. Aaa, Aaa. Aaa, Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa. Aaa.";
     return selectedText;
 }
 
