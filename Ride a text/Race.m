@@ -48,13 +48,43 @@
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
     
     // делает первую букву текста заглавной
-    if (self.countOfTouchOnKeyboard == 0) {
+    if (self.countOfTouchOnKeyboard == 0 || self.afterComma == 1) {
         NSString *text = [textField text];
         NSString *capitalized = [[[text substringToIndex:1] uppercaseString] stringByAppendingString:[text substringFromIndex:1]];
         textField.text = capitalized;
+        self.afterComma = 0;
     }
+    //!!!по идее сюда добавить ифы для большой буквы во втором предложении!!!
+    
+    
     
     if ([textField.text isEqual:[label.text substringWithRange:self.range]]) {
+        
+        if ([textField.text isEqualToString:@"."] ||
+            [textField.text isEqualToString:@"!"] ||
+            [textField.text isEqualToString:@"?"]) {
+            
+            self.comma = 1;
+        }
+        if ([textField.text isEqualToString:@" "] && self.comma == 1) {
+            
+            [textField setKeyboardType:UIKeyboardTypeASCIICapable];
+            
+            if (self.keyboardChange == 1) {
+                [textField resignFirstResponder];
+                [textField becomeFirstResponder];
+                NSLog(@"resignFirstResponder");
+            }
+            if (self.keyboardChange == 0) {
+                [textField reloadInputViews];
+                NSLog(@"reloadInputViews");
+                self.keyboardChange = 1;
+            }
+
+            self.afterComma = 1;
+            self.comma = 0;
+        }
+        
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor colorWithRed:89/255.0 green:188/255.0 blue:227/255.0 alpha:1] range:self.range];
         label.attributedText = self.now;
         textField.text = @"";

@@ -17,5 +17,9 @@
 
 @property (assign, nonatomic) CGFloat         lenghtOfText;
 @property (assign, nonatomic) NSInteger       countOfTouchOnKeyboard;
+@property (assign, nonatomic) NSInteger       comma;
+@property (assign, nonatomic) NSInteger       afterComma;
+@property (assign, nonatomic) NSInteger       keyboardChange;
+
 
 @end

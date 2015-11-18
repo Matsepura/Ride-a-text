@@ -95,8 +95,7 @@
     
     if ([[self loadTextSelect] isEqualToString:@"russianText"] || [localizeText isEqualToString:@"russianText"]) {
         self.textLanguage.selectedSegmentIndex = 0;
-    }
-    if ([[self loadTextSelect] isEqualToString:@"englishText"] || [localizeText isEqualToString:@"englishText"]) {
+    }else if ([[self loadTextSelect] isEqualToString:@"englishText"] || [localizeText isEqualToString:@"englishText"]) {
         self.textLanguage.selectedSegmentIndex = 1;
     }
     
