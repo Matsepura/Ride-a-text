@@ -155,16 +155,16 @@
 
 -(void)setupBackground{
     if (self.view.frame.size.height == 480) {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"4s-full.png"]];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"4s-fullW.png"]];
     };
     if (self.view.frame.size.height == 568) {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"5-and-5s-full.png"]];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"5-and-5s-fullW.png"]];
     };
     if (self.view.frame.size.height == 667) {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"6-full.png"]];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"6-fullW.png"]];
     };
     if (self.view.frame.size.height == 736) {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"6+-full.png"]];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"6+-fullW.png"]];
         self.viewOfLabel.frame = CGRectMake(self.viewOfLabel.frame.origin.x, self.viewOfLabel.frame.origin.y - 30, self.viewOfLabel.frame.size.width, self.viewOfLabel.frame.size.height);
         self.labelConstraint.constant += 5;
         [self.view layoutIfNeeded];
