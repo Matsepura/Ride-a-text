@@ -151,15 +151,23 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best record: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7A-Ca-SZB">
-                                <rect key="frame" x="16" y="562" width="568" height="18"/>
+                                <rect key="frame" x="16" y="72" width="568" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elka" translatesAutoresizingMaskIntoConstraints="NO" id="fVG-Xo-njX">
+                                <rect key="frame" x="503" y="485" width="77" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="Nr5-OW-KSg"/>
+                                    <constraint firstAttribute="width" constant="77" id="bW3-Ve-1Pk"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Bl8-zG-GoB" firstAttribute="top" secondItem="p7A-Ca-SZB" secondAttribute="bottom" constant="20" id="3s9-ki-7Fw"/>
+                            <constraint firstItem="Bl8-zG-GoB" firstAttribute="top" secondItem="fVG-Xo-njX" secondAttribute="bottom" id="4gT-7Y-Dan"/>
+                            <constraint firstItem="fVG-Xo-njX" firstAttribute="trailing" secondItem="bRr-DM-64w" secondAttribute="trailingMargin" id="CRJ-Gf-SHD"/>
                             <constraint firstItem="1Ry-pD-uld" firstAttribute="top" secondItem="Bpz-Vu-yf9" secondAttribute="bottom" constant="-73" id="FM6-Wc-Avt"/>
                             <constraint firstItem="Bpz-Vu-yf9" firstAttribute="leading" secondItem="bRr-DM-64w" secondAttribute="leadingMargin" constant="90" id="Fu3-Y5-o22"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bpz-Vu-yf9" secondAttribute="trailing" constant="90" id="KXf-Uv-YQe"/>
@@ -169,6 +177,7 @@
                             <constraint firstItem="hBo-RE-ed7" firstAttribute="leading" secondItem="bRr-DM-64w" secondAttribute="leadingMargin" constant="90" id="gyL-TZ-qWf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hBo-RE-ed7" secondAttribute="trailing" constant="90" id="ius-ga-fyW"/>
                             <constraint firstAttribute="centerY" secondItem="hBo-RE-ed7" secondAttribute="centerY" constant="50" id="jo4-eo-hXR"/>
+                            <constraint firstItem="p7A-Ca-SZB" firstAttribute="top" secondItem="tsx-qo-4w3" secondAttribute="bottom" constant="8" id="qiz-g7-8EK"/>
                             <constraint firstAttribute="centerY" secondItem="Bpz-Vu-yf9" secondAttribute="centerY" constant="-80" id="ur1-Tf-ElV"/>
                         </constraints>
                     </view>
@@ -313,8 +322,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-N1-ikq" userLabel="Restart">
                                 <rect key="frame" x="16" y="20" width="50" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Restart">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -324,7 +334,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIn-SG-DVj">
                                 <rect key="frame" x="545" y="20" width="39" height="30"/>
                                 <state key="normal" title="Menu">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="jVB-8m-T5v" kind="show" id="Qqo-tW-PKZ"/>
@@ -887,6 +897,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qqo-tW-PKZ"/>
-        <segue reference="aF6-ui-JV5"/>
+        <segue reference="xIN-fP-iBf"/>
     </inferredMetricsTieBreakers>
 </document>
