@@ -29,9 +29,9 @@
 }
 
 -(void)setup{
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:4/255.0 green:133/255.0 blue:126/255.0 alpha:1];
     
-    self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
+    self.view.backgroundColor = [UIColor colorWithRed:6/255.0 green:184/255.0 blue:175/255.0 alpha:1];
 }
 
 #pragma mark - list of car

@@ -61,7 +61,7 @@
     
     [self.enterRaceTextField becomeFirstResponder];
     [self.raceProperty setUpTextInRace:self.labelForTextRace];
-    //    self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
+    //    self.view.backgroundColor = [UIColor colorWithRed:6/255.0 green:184/255.0 blue:175/255.0 alpha:1];
     [self customizePlayerSlider];
     [self.averageSpeed startStopwatch];
     [self.raceProperty initSetting];
@@ -98,7 +98,7 @@
     CGFloat radious = CGRectGetHeight(frame) / 10;
     layer.cornerRadius = radious;
     //Обведем кнопку
-    layer.borderColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1].CGColor;
+    layer.borderColor = [UIColor colorWithRed:4/255.0 green:133/255.0 blue:126/255.0 alpha:1].CGColor;
     layer.borderWidth = 3;
 }
 
@@ -155,16 +155,16 @@
 
 -(void)setupBackground{
     if (self.view.frame.size.height == 480) {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"4s-fullW.png"]];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"4s-full.png"]];
     };
     if (self.view.frame.size.height == 568) {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"5-and-5s-fullW.png"]];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"5-and-5s-full.png"]];
     };
     if (self.view.frame.size.height == 667) {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"6-fullW.png"]];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"6-full.png"]];
     };
     if (self.view.frame.size.height == 736) {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"6+-fullW.png"]];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"6+-full.png"]];
         self.viewOfLabel.frame = CGRectMake(self.viewOfLabel.frame.origin.x, self.viewOfLabel.frame.origin.y - 30, self.viewOfLabel.frame.size.width, self.viewOfLabel.frame.size.height);
         self.labelConstraint.constant += 5;
         [self.view layoutIfNeeded];
